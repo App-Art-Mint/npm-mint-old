@@ -1,0 +1,66 @@
+/// Imports
+@use '@appartmint/util/src/scss/imports/util' as *;
+@use '../vars' as *;
+
+/// Global styles
+* {
+    &, &::before, &::after {
+        box-sizing: border-box;
+    }
+}
+
+html, body {
+    color: css-var(fore);
+    background-color: css-var(back);
+    overflow-x: hidden;
+}
+
+html, body, main {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1000;
+}
+
+nav {
+    a {
+        display: block;
+        text-decoration: none;
+    }
+
+    ul {
+        display: flex;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        & > li > ul {
+            flex-direction: column;
+        }
+    }
+}
+
+a {
+    &[href^='tel:'], &[href^='mailto:'] {
+        white-space: nowrap;
+    }
+}
+
+button {
+    cursor: pointer;
+}
+
+a, button {
+    font-size: inherit;
+}
+
+img {
+    width: 100%;
+}

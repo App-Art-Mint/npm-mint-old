@@ -1,0 +1,55 @@
+/// Imports
+@use '@appartmint/util/src/scss/imports/util' as *;
+@use './imports/global/animations.scss';
+@use './imports/global/global.scss';
+@use './imports/global/structure.scss';
+@use './imports/global/themes.scss';
+
+
+/// Global Styles
+#{class(bg)} {
+    display: block;
+    opacity: 0;
+    height: 0;
+    width: 0;
+    z-index: -1;
+}
+
+#{class(vp-fall-in)} {
+    opacity: 0;
+    transform: translateY(-100px);
+    transition: opacity 500ms, transform 500ms !important;
+    pointer-events: none;
+
+    &.visible {
+        opacity: 1;
+        transform: translateY(0%);
+        pointer-events: auto;
+    }
+}
+
+#{class(pill)} {
+    display: inline-block;
+    padding: 0 0.75rem;
+    border-radius: 1rem;
+    text-decoration: none;
+    color: css-var(fore);
+    background: css-var(brand-5);
+
+    @include states(hover, focus, active) {
+        color: css-var(back);
+        background: css-var(brand-3);
+        outline-color: css-var(brand-0);
+    }
+
+    &#{class(alt)} {
+        color: css-var(brand-3);
+        background: css-var(trans);
+
+        @include states(hover, focus, active) {
+            color: css-var(fore);
+            background: css-var(trans);
+            outline-color: css-var(accent-2);
+        }
+    }
+}
