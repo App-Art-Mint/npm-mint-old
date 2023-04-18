@@ -26,16 +26,16 @@
   {
     "description": "Global styles\n",
     "commentRange": {
-      "start": 5,
-      "end": 5
+      "start": 4,
+      "end": 4
     },
     "context": {
       "type": "css",
       "name": "*",
       "value": "&, &::before, &::after {\n        box-sizing: border-box;\n    }",
       "line": {
-        "start": 6,
-        "end": 67
+        "start": 5,
+        "end": 66
       }
     },
     "access": "public",
@@ -50,16 +50,16 @@
   {
     "description": "Structure styles\n",
     "commentRange": {
-      "start": 5,
-      "end": 5
+      "start": 4,
+      "end": 4
     },
     "context": {
       "type": "css",
       "name": "#{class(pad)}",
       "value": "@include break-util(padding, 1rem, 0);",
       "line": {
-        "start": 6,
-        "end": 85
+        "start": 5,
+        "end": 84
       }
     },
     "access": "public",
@@ -371,16 +371,16 @@
   {
     "description": "Global Styles\n",
     "commentRange": {
-      "start": 9,
-      "end": 9
+      "start": 12,
+      "end": 12
     },
     "context": {
       "type": "css",
       "name": "#{class(bg)}",
       "value": "display: block;\n    opacity: 0;\n    height: 0;\n    width: 0;\n    z-index: -1;",
       "line": {
-        "start": 10,
-        "end": 56
+        "start": 13,
+        "end": 83
       }
     },
     "access": "public",
