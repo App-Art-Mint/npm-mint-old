@@ -1,0 +1,17 @@
+/// background.scss - Static background styles
+/// @author App Art Mint LLC
+/// 
+/// @group Background
+@charset 'utf-8';
+
+/// Imports
+@use '../util' as *;
+
+/// Background Styles
+#{class(bg)} {
+    display: block;
+    opacity: 0;
+    height: 0;
+    width: 0;
+    z-index: -1;
+}

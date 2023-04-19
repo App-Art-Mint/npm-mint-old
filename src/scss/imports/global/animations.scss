@@ -6,7 +6,7 @@
 
 /// Imports
 @use 'sass:math';
-@use '@appartmint/util/src/scss/imports/util' as *;
+@use '../util' as *;
 
 /// Animations
 /// Cycle through instagram colors
@@ -27,4 +27,41 @@
     @include css-var(delay-default, delay(default));
     @include css-var(delay-med-slow, delay(med-slow));
     @include css-var(delay-slow, delay(slow));
+}
+
+#{class(vp-fall-in)} {
+    opacity: 0;
+    transform: translateY(-100px);
+    transition: opacity 500ms, transform 500ms !important;
+    pointer-events: none;
+
+    &.visible {
+        opacity: 1;
+        transform: translateY(0%);
+        pointer-events: auto;
+    }
+}
+
+#{class(shine)} {
+    position: relative;
+    overflow: hidden;
+
+    @include states(hover, focus, active) {
+        &::after {
+            transition-duration: delay(default);
+            transform: translate(100%, -100%);
+        }
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform: translate(-100%, 100%);
+        background: linear-gradient(45deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.15) 50%, rgba(255,255,255,0) 100%);
+        transition: transform delay(med-fast) ease-in;
+    }
 }

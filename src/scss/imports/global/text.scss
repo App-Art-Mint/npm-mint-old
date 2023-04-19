@@ -5,7 +5,7 @@
 @charset 'utf-8';
 
 /// Imports
-@use '@appartmint/util/src/scss/imports/util' as *;
+@use '../util' as *;
 
 /// Fonts
 $font-primary: 'Palanquin' !default;

@@ -1,0 +1,34 @@
+/// buttons.scss - Button styles
+/// @author App Art Mint LLC
+/// 
+/// @group Buttons
+@charset 'utf-8';
+
+/// Imports
+@use '../util' as *;
+
+#{class(pill)} {
+    display: inline-block;
+    padding: 0 0.75rem;
+    border-radius: 1rem;
+    text-decoration: none;
+    color: css-var(fore);
+    background: css-var(brand-5);
+
+    @include states(hover, focus, active) {
+        color: css-var(back);
+        background: css-var(brand-3);
+        outline-color: css-var(brand-0);
+    }
+
+    &#{class(alt)} {
+        color: css-var(brand-3);
+        background: css-var(trans);
+
+        @include states(hover, focus, active) {
+            color: css-var(fore);
+            background: css-var(trans);
+            outline-color: css-var(accent-2);
+        }
+    }
+}

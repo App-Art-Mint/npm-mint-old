@@ -1,5 +1,5 @@
 /// Imports
-@use '@appartmint/util/src/scss/imports/util' as *;
+@use '../util' as *;
 
 /// Structure styles
 #{class(pad)} {
