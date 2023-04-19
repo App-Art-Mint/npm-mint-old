@@ -43,13 +43,13 @@ html, body {
 }
 
 @for $i from 1 through 6 {
-    h#{$i}, .h#{$i} {
+    h#{$i}, #{class(h#{$i})} {
         font-family: $font-secondary, $font-backups;
     }
 }
 
 @each $tag in map-keys($font-size-mobile) {
-    #{$tag}, .#{$tag} {
+    #{$tag}, #{class($tag)} {
         margin: 1rem 0;
         font-size: map-get($font-size-mobile, $tag);
 

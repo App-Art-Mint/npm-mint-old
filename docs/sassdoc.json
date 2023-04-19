@@ -371,16 +371,16 @@
   {
     "description": "Global Styles\n",
     "commentRange": {
-      "start": 12,
-      "end": 12
+      "start": 13,
+      "end": 13
     },
     "context": {
       "type": "css",
       "name": "#{class(bg)}",
       "value": "display: block;\n    opacity: 0;\n    height: 0;\n    width: 0;\n    z-index: -1;",
       "line": {
-        "start": 13,
-        "end": 83
+        "start": 14,
+        "end": 84
       }
     },
     "access": "public",
