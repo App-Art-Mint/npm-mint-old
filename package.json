@@ -1,7 +1,7 @@
 {
   "name": "@appartmint/mint",
   "author": "App/Art Mint",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "license": "MIT",
   "description": "The front-end TS/SCSS framework of App/Art Mint",
   "keywords": [
@@ -99,6 +99,6 @@
     "webpack-shebang-plugin": "^1.1.8"
   },
   "dependencies": {
-    "@appartmint/n4v": "^0.8.7"
+    "@appartmint/n4v": "^0.8.8"
   }
 }
