@@ -72,6 +72,10 @@ $padding: 1.5rem;
 
         @include break(sm) {
             width: 50%;
+
+            &:only-child {
+                width: 100%;
+            }
         }
 
         img {
