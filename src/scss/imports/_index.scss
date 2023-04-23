@@ -1,0 +1,8 @@
+/// _index.scss - Loads every scss style file in the Mint library
+/// @author App Art Mint LLC
+/// 
+/// @group Mint
+
+/// Imports
+@use './components';
+@use './global';

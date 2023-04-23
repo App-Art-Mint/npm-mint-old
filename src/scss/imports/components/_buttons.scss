@@ -8,7 +8,7 @@
 @use '../util' as *;
 
 #{class(pill)} {
-    display: inline-block;
+    display: inline-flex;
     padding: 0 0.75rem;
     border-radius: 1rem;
     text-decoration: none;

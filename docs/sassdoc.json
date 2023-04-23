@@ -1,273 +1,5 @@
 [
   {
-    "description": "Background Styles\n",
-    "commentRange": {
-      "start": 10,
-      "end": 10
-    },
-    "context": {
-      "type": "css",
-      "name": "#{class(bg)}",
-      "value": "display: block;\n    opacity: 0;\n    height: 0;\n    width: 0;\n    z-index: -1;",
-      "line": {
-        "start": 11,
-        "end": 18
-      }
-    },
-    "access": "public",
-    "group": [
-      "undefined"
-    ],
-    "file": {
-      "path": "imports/components/background.scss",
-      "name": "background.scss"
-    }
-  },
-  {
-    "description": "CSS variables\n",
-    "commentRange": {
-      "start": 22,
-      "end": 22
-    },
-    "context": {
-      "type": "css",
-      "name": ":root",
-      "value": "@include css-var(delay-instant, delay(instant));\n    @include css-var(delay-fast, delay(fast));\n    @include css-var(delay-med-fast, delay(med-fast));\n    @include css-var(delay-default, delay(default));\n    @include css-var(delay-med-slow, delay(med-slow));\n    @include css-var(delay-slow, delay(slow));",
-      "line": {
-        "start": 23,
-        "end": 68
-      }
-    },
-    "access": "public",
-    "group": [
-      "undefined"
-    ],
-    "file": {
-      "path": "imports/global/animations.scss",
-      "name": "animations.scss"
-    }
-  },
-  {
-    "description": "Global styles\n",
-    "commentRange": {
-      "start": 4,
-      "end": 4
-    },
-    "context": {
-      "type": "css",
-      "name": "*",
-      "value": "&, &::before, &::after {\n        box-sizing: border-box;\n    }",
-      "line": {
-        "start": 5,
-        "end": 66
-      }
-    },
-    "access": "public",
-    "group": [
-      "undefined"
-    ],
-    "file": {
-      "path": "imports/global/global.scss",
-      "name": "global.scss"
-    }
-  },
-  {
-    "description": "Structure styles\n",
-    "commentRange": {
-      "start": 4,
-      "end": 4
-    },
-    "context": {
-      "type": "css",
-      "name": "#{class(pad)}",
-      "value": "@include break-util(padding, 1rem, 0);",
-      "line": {
-        "start": 5,
-        "end": 84
-      }
-    },
-    "access": "public",
-    "group": [
-      "undefined"
-    ],
-    "file": {
-      "path": "imports/global/structure.scss",
-      "name": "structure.scss"
-    }
-  },
-  {
-    "description": "Fonts\n",
-    "commentRange": {
-      "start": 10,
-      "end": 10
-    },
-    "context": {
-      "type": "variable",
-      "name": "font-primary",
-      "value": "'Palanquin'",
-      "scope": "default",
-      "line": {
-        "start": 11,
-        "end": 11
-      }
-    },
-    "access": "public",
-    "group": [
-      "undefined"
-    ],
-    "file": {
-      "path": "imports/global/text.scss",
-      "name": "text.scss"
-    }
-  },
-  {
-    "description": "Font Sizes\n",
-    "commentRange": {
-      "start": 15,
-      "end": 15
-    },
-    "context": {
-      "type": "variable",
-      "name": "font-size-mobile",
-      "value": "(\n    h1: 2.5rem,\n    h2: 2rem,\n    h3: 1.75rem,\n    h4: 1.5rem,\n    h5: 1.25rem,\n    h6: 1.125rem,\n    p: 1rem,\n)",
-      "scope": "default",
-      "line": {
-        "start": 16,
-        "end": 24
-      }
-    },
-    "access": "public",
-    "group": [
-      "undefined"
-    ],
-    "file": {
-      "path": "imports/global/text.scss",
-      "name": "text.scss"
-    }
-  },
-  {
-    "description": "Text Styles\n",
-    "commentRange": {
-      "start": 35,
-      "end": 35
-    },
-    "context": {
-      "type": "css",
-      "name": "html, body",
-      "value": "font-family: $font-primary, $font-backups;\n    font-size: 1rem;\n\n    @include break(md) {\n        font-size: 1.125rem;\n    }",
-      "line": {
-        "start": 36,
-        "end": 61
-      }
-    },
-    "access": "public",
-    "group": [
-      "undefined"
-    ],
-    "file": {
-      "path": "imports/global/text.scss",
-      "name": "text.scss"
-    }
-  },
-  {
-    "description": "Global theme\n",
-    "commentRange": {
-      "start": 11,
-      "end": 11
-    },
-    "context": {
-      "type": "css",
-      "name": ":root",
-      "value": "/// Global Colors\n    /// Brands\n    @include css-var(bitcoin, $bitcoin);\n    @include css-var(ethereum, $ethereum);\n    @include css-var(venmo, $venmo);\n    @include css-var(facebook, $facebook);\n    @include css-var(youtube, $youtube);\n    @include css-var(itunes, $itunes);\n    @include css-var(spotify, $spotify);\n    @include css-var(amazon-0, $amazon-0);\n    @include css-var(amazon-1, $amazon-1);\n    @include css-var(napster-0, $napster-0);\n    @include css-var(napster-1, $napster-1);\n    @include css-var(google-play-0, $google-play-0);\n    @include css-var(google-play-1, $google-play-1);\n    @include css-var(google-play-2, $google-play-2);\n    @include css-var(instagram-0, $instagram-0);\n    @include css-var(instagram-1, $instagram-1);\n    @include css-var(instagram-2, $instagram-2);\n    @include css-var(instagram-3, $instagram-3);\n    @include css-var(instagram-4, $instagram-4);\n    @include css-var(instagram-5, $instagram-5);\n    @include css-var(instagram-6, $instagram-6);\n\n    /// Application Colors\n    @include shades('black', $black, lighten);\n    @include shades('white', $white, darken);\n    @include shades(trans, $trans, darken, 7, 10%, true);\n\n    @include shades(brand, $brand);\n    @include shades(accent, $accent);\n    @include shades(success, $success);\n    @include shades(danger, $danger);\n    @include shades(warning, $warning);\n    @include shades(info, $info);",
-      "line": {
-        "start": 12,
-        "end": 116
-      }
-    },
-    "access": "public",
-    "group": [
-      "undefined"
-    ],
-    "file": {
-      "path": "imports/global/themes.scss",
-      "name": "themes.scss"
-    }
-  },
-  {
-    "description": "Light theme\n",
-    "commentRange": {
-      "start": 50,
-      "end": 50
-    },
-    "context": {
-      "type": "mixin",
-      "name": "light-theme",
-      "code": "\n    @include css-var(fore, $fore);\n    @include css-var(back, $back);\n",
-      "line": {
-        "start": 51,
-        "end": 54
-      }
-    },
-    "access": "public",
-    "group": [
-      "undefined"
-    ],
-    "require": [],
-    "file": {
-      "path": "imports/global/themes.scss",
-      "name": "themes.scss"
-    }
-  },
-  {
-    "description": "Dark theme\n",
-    "commentRange": {
-      "start": 56,
-      "end": 56
-    },
-    "context": {
-      "type": "mixin",
-      "name": "dark-theme",
-      "code": "\n    @include css-var(fore, $back);\n    @include css-var(back, $fore);\n",
-      "line": {
-        "start": 57,
-        "end": 60
-      }
-    },
-    "access": "public",
-    "group": [
-      "undefined"
-    ],
-    "require": [],
-    "file": {
-      "path": "imports/global/themes.scss",
-      "name": "themes.scss"
-    }
-  },
-  {
-    "description": "Apply themes\n",
-    "commentRange": {
-      "start": 62,
-      "end": 62
-    },
-    "context": {
-      "type": "css",
-      "name": ":root",
-      "value": "@if ($theme-default == light) {\n        @include light-theme;\n    } @else {\n        @include dark-theme;\n    }",
-      "line": {
-        "start": 63,
-        "end": 116
-      }
-    },
-    "access": "public",
-    "group": [
-      "undefined"
-    ],
-    "file": {
-      "path": "imports/global/themes.scss",
-      "name": "themes.scss"
-    }
-  },
-  {
     "description": "Global Colors\n",
     "commentRange": {
       "start": 7,
@@ -288,8 +20,8 @@
       "undefined"
     ],
     "file": {
-      "path": "imports/vars.scss",
-      "name": "vars.scss"
+      "path": "imports/_vars.scss",
+      "name": "_vars.scss"
     }
   },
   {
@@ -313,8 +45,8 @@
       "undefined"
     ],
     "file": {
-      "path": "imports/vars.scss",
-      "name": "vars.scss"
+      "path": "imports/_vars.scss",
+      "name": "_vars.scss"
     }
   },
   {
@@ -338,8 +70,8 @@
       "undefined"
     ],
     "file": {
-      "path": "imports/vars.scss",
-      "name": "vars.scss"
+      "path": "imports/_vars.scss",
+      "name": "_vars.scss"
     }
   },
   {
@@ -363,8 +95,8 @@
       "undefined"
     ],
     "file": {
-      "path": "imports/vars.scss",
-      "name": "vars.scss"
+      "path": "imports/_vars.scss",
+      "name": "_vars.scss"
     }
   },
   {
@@ -388,8 +120,325 @@
       "undefined"
     ],
     "file": {
-      "path": "imports/vars.scss",
-      "name": "vars.scss"
+      "path": "imports/_vars.scss",
+      "name": "_vars.scss"
+    }
+  },
+  {
+    "description": "Background Styles\n",
+    "commentRange": {
+      "start": 10,
+      "end": 10
+    },
+    "context": {
+      "type": "css",
+      "name": "#{class(bg)}",
+      "value": "display: block;\n    opacity: 0;\n    height: 0;\n    width: 0;\n    z-index: -1;",
+      "line": {
+        "start": 11,
+        "end": 18
+      }
+    },
+    "access": "public",
+    "group": [
+      "undefined"
+    ],
+    "file": {
+      "path": "imports/components/_backgrounds.scss",
+      "name": "_backgrounds.scss"
+    }
+  },
+  {
+    "description": "Variables\n",
+    "commentRange": {
+      "start": 10,
+      "end": 10
+    },
+    "context": {
+      "type": "variable",
+      "name": "border-radius",
+      "value": "1rem",
+      "scope": "private",
+      "line": {
+        "start": 11,
+        "end": 11
+      }
+    },
+    "access": "public",
+    "group": [
+      "undefined"
+    ],
+    "file": {
+      "path": "imports/components/_cards.scss",
+      "name": "_cards.scss"
+    }
+  },
+  {
+    "description": "Card Styles\n",
+    "commentRange": {
+      "start": 14,
+      "end": 14
+    },
+    "context": {
+      "type": "css",
+      "name": "#{class(card)}",
+      "value": "display: flex;\n    flex-direction: column;\n    margin: $padding * 2 0;\n    border-radius: $border-radius;\n    overflow: hidden;\n\n    @include break(sm) {\n        flex-direction: row;\n\n        &#{class(reverse)} {\n            flex-direction: row-reverse;\n        }\n    }\n\n    &#{class(stagger)} {\n        position: relative;\n\n        @include break(sm) {\n            flex-direction: row-reverse;\n            border-radius: 0;\n\n            #{class(image)} {\n                position: absolute;\n                top: 0;\n                left: 0;\n                width: 50%;\n                height: calc(100% - 3rem);\n                border-radius: $border-radius;\n\n                img {\n                    height: 100%;\n                    object-fit: cover;\n                }\n            }\n\n            #{class(content)} {\n                width: calc(50% + $padding * 2);\n                margin-top: $padding * 2;\n                border-radius: $border-radius;\n            }\n        }\n\n        &#{class(reverse)} {\n            @include break(sm) {\n                flex-direction: row;\n\n                #{class(image)} {\n                    left: auto;\n                    right: 0;\n                }\n            }\n        }\n    }\n\n    #{class(image)} {\n        overflow: hidden;\n\n        @include break(sm) {\n            width: 50%;\n        }\n\n        img {\n            display: block;\n        }\n    }\n\n    #{class(content)} {\n        padding: $padding;\n        background: css-var(black-2);\n\n        @include break(sm) {\n            width: 50%;\n        }\n\n        :first-child {\n            margin-top: 0;\n        }\n\n        :last-child {\n            margin-bottom: 0;\n        }\n\n        #{class(buttons)} {\n            display: flex;\n            align-items: center;\n\n            & > * {\n                margin-right: 0.5rem;\n            }\n\n            :last-child {\n                margin-right: 0;\n            }\n        }\n    }",
+      "line": {
+        "start": 15,
+        "end": 112
+      }
+    },
+    "access": "public",
+    "group": [
+      "undefined"
+    ],
+    "file": {
+      "path": "imports/components/_cards.scss",
+      "name": "_cards.scss"
+    }
+  },
+  {
+    "description": "CSS variables\n",
+    "commentRange": {
+      "start": 22,
+      "end": 22
+    },
+    "context": {
+      "type": "css",
+      "name": ":root",
+      "value": "@include css-var(delay-instant, delay(instant));\n    @include css-var(delay-fast, delay(fast));\n    @include css-var(delay-med-fast, delay(med-fast));\n    @include css-var(delay-default, delay(default));\n    @include css-var(delay-med-slow, delay(med-slow));\n    @include css-var(delay-slow, delay(slow));",
+      "line": {
+        "start": 23,
+        "end": 68
+      }
+    },
+    "access": "public",
+    "group": [
+      "undefined"
+    ],
+    "file": {
+      "path": "imports/global/_animations.scss",
+      "name": "_animations.scss"
+    }
+  },
+  {
+    "description": "Global styles\n",
+    "commentRange": {
+      "start": 4,
+      "end": 4
+    },
+    "context": {
+      "type": "css",
+      "name": "*",
+      "value": "&, &::before, &::after {\n        box-sizing: border-box;\n    }",
+      "line": {
+        "start": 5,
+        "end": 66
+      }
+    },
+    "access": "public",
+    "group": [
+      "undefined"
+    ],
+    "file": {
+      "path": "imports/global/_global.scss",
+      "name": "_global.scss"
+    }
+  },
+  {
+    "description": "Structure styles\n",
+    "commentRange": {
+      "start": 4,
+      "end": 4
+    },
+    "context": {
+      "type": "css",
+      "name": "#{class(pad)}",
+      "value": "@include break-util(padding, 1rem, 0);",
+      "line": {
+        "start": 5,
+        "end": 84
+      }
+    },
+    "access": "public",
+    "group": [
+      "undefined"
+    ],
+    "file": {
+      "path": "imports/global/_structure.scss",
+      "name": "_structure.scss"
+    }
+  },
+  {
+    "description": "Fonts\n",
+    "commentRange": {
+      "start": 10,
+      "end": 10
+    },
+    "context": {
+      "type": "variable",
+      "name": "font-primary",
+      "value": "'Palanquin'",
+      "scope": "default",
+      "line": {
+        "start": 11,
+        "end": 11
+      }
+    },
+    "access": "public",
+    "group": [
+      "undefined"
+    ],
+    "file": {
+      "path": "imports/global/_text.scss",
+      "name": "_text.scss"
+    }
+  },
+  {
+    "description": "Font Sizes\n",
+    "commentRange": {
+      "start": 15,
+      "end": 15
+    },
+    "context": {
+      "type": "variable",
+      "name": "font-size-mobile",
+      "value": "(\n    h1: 2.5rem,\n    h2: 2rem,\n    h3: 1.75rem,\n    h4: 1.5rem,\n    h5: 1.25rem,\n    h6: 1.125rem,\n    p: 1rem,\n)",
+      "scope": "default",
+      "line": {
+        "start": 16,
+        "end": 24
+      }
+    },
+    "access": "public",
+    "group": [
+      "undefined"
+    ],
+    "file": {
+      "path": "imports/global/_text.scss",
+      "name": "_text.scss"
+    }
+  },
+  {
+    "description": "Text Styles\n",
+    "commentRange": {
+      "start": 35,
+      "end": 35
+    },
+    "context": {
+      "type": "css",
+      "name": "html, body",
+      "value": "font-family: $font-primary, $font-backups;\n    font-size: 1rem;\n\n    @include break(md) {\n        font-size: 1.125rem;\n    }",
+      "line": {
+        "start": 36,
+        "end": 61
+      }
+    },
+    "access": "public",
+    "group": [
+      "undefined"
+    ],
+    "file": {
+      "path": "imports/global/_text.scss",
+      "name": "_text.scss"
+    }
+  },
+  {
+    "description": "Global theme\n",
+    "commentRange": {
+      "start": 11,
+      "end": 11
+    },
+    "context": {
+      "type": "css",
+      "name": ":root",
+      "value": "/// Global Colors\n    /// Brands\n    @include css-var(bitcoin, $bitcoin);\n    @include css-var(ethereum, $ethereum);\n    @include css-var(venmo, $venmo);\n    @include css-var(facebook, $facebook);\n    @include css-var(youtube, $youtube);\n    @include css-var(itunes, $itunes);\n    @include css-var(spotify, $spotify);\n    @include css-var(amazon-0, $amazon-0);\n    @include css-var(amazon-1, $amazon-1);\n    @include css-var(napster-0, $napster-0);\n    @include css-var(napster-1, $napster-1);\n    @include css-var(google-play-0, $google-play-0);\n    @include css-var(google-play-1, $google-play-1);\n    @include css-var(google-play-2, $google-play-2);\n    @include css-var(instagram-0, $instagram-0);\n    @include css-var(instagram-1, $instagram-1);\n    @include css-var(instagram-2, $instagram-2);\n    @include css-var(instagram-3, $instagram-3);\n    @include css-var(instagram-4, $instagram-4);\n    @include css-var(instagram-5, $instagram-5);\n    @include css-var(instagram-6, $instagram-6);\n\n    /// Application Colors\n    @include shades('black', $black, lighten);\n    @include shades('white', $white, darken);\n    @include shades(trans, $trans, darken, 7, 10%, true);\n\n    @include shades(brand, $brand);\n    @include shades(accent, $accent);\n    @include shades(success, $success);\n    @include shades(danger, $danger);\n    @include shades(warning, $warning);\n    @include shades(info, $info);",
+      "line": {
+        "start": 12,
+        "end": 116
+      }
+    },
+    "access": "public",
+    "group": [
+      "undefined"
+    ],
+    "file": {
+      "path": "imports/global/_themes.scss",
+      "name": "_themes.scss"
+    }
+  },
+  {
+    "description": "Light theme\n",
+    "commentRange": {
+      "start": 50,
+      "end": 50
+    },
+    "context": {
+      "type": "mixin",
+      "name": "light-theme",
+      "code": "\n    @include css-var(fore, $fore);\n    @include css-var(back, $back);\n",
+      "line": {
+        "start": 51,
+        "end": 54
+      }
+    },
+    "access": "public",
+    "group": [
+      "undefined"
+    ],
+    "require": [],
+    "file": {
+      "path": "imports/global/_themes.scss",
+      "name": "_themes.scss"
+    }
+  },
+  {
+    "description": "Dark theme\n",
+    "commentRange": {
+      "start": 56,
+      "end": 56
+    },
+    "context": {
+      "type": "mixin",
+      "name": "dark-theme",
+      "code": "\n    @include css-var(fore, $back);\n    @include css-var(back, $fore);\n",
+      "line": {
+        "start": 57,
+        "end": 60
+      }
+    },
+    "access": "public",
+    "group": [
+      "undefined"
+    ],
+    "require": [],
+    "file": {
+      "path": "imports/global/_themes.scss",
+      "name": "_themes.scss"
+    }
+  },
+  {
+    "description": "Apply themes\n",
+    "commentRange": {
+      "start": 62,
+      "end": 62
+    },
+    "context": {
+      "type": "css",
+      "name": ":root",
+      "value": "@if ($theme-default == light) {\n        @include light-theme;\n    } @else {\n        @include dark-theme;\n    }",
+      "line": {
+        "start": 63,
+        "end": 116
+      }
+    },
+    "access": "public",
+    "group": [
+      "undefined"
+    ],
+    "file": {
+      "path": "imports/global/_themes.scss",
+      "name": "_themes.scss"
     }
   }
 ]
