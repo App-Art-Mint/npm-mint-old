@@ -32,13 +32,17 @@
 #{class(vp-fall-in)} {
     opacity: 0;
     transform: translateY(-100px);
-    transition: opacity 500ms, transform 500ms !important;
+    transition: all delay(slow), box-shadow delay(slow) delay(med-slow) !important;
     pointer-events: none;
 
-    &.visible {
+    &#{class(show)}#{neg(class(loading))} {
         opacity: 1;
         transform: translateY(0%);
         pointer-events: auto;
+    }
+
+    &#{neg(class(show))}, &#{class(loading)} {
+        box-shadow: 0 0 0 0 transparent !important;
     }
 }
 

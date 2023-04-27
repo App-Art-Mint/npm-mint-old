@@ -176,16 +176,16 @@
   {
     "description": "Card Styles\n",
     "commentRange": {
-      "start": 14,
-      "end": 14
+      "start": 15,
+      "end": 15
     },
     "context": {
       "type": "css",
       "name": "#{class(card)}",
-      "value": "display: flex;\n    flex-direction: column;\n    margin: $padding * 2 0;\n    border-radius: $border-radius;\n    overflow: hidden;\n\n    @include break(sm) {\n        flex-direction: row;\n\n        &#{class(reverse)} {\n            flex-direction: row-reverse;\n        }\n    }\n\n    &#{class(stagger)} {\n        position: relative;\n\n        @include break(sm) {\n            flex-direction: row-reverse;\n            border-radius: 0;\n\n            #{class(image)} {\n                position: absolute;\n                top: 0;\n                left: 0;\n                width: 50%;\n                height: calc(100% - 3rem);\n                border-radius: $border-radius;\n\n                img {\n                    height: 100%;\n                    object-fit: cover;\n                }\n            }\n\n            #{class(content)} {\n                width: calc(50% + $padding * 2);\n                margin-top: $padding * 2;\n                border-radius: $border-radius;\n            }\n        }\n\n        &#{class(reverse)} {\n            @include break(sm) {\n                flex-direction: row;\n\n                #{class(image)} {\n                    left: auto;\n                    right: 0;\n                }\n            }\n        }\n    }\n\n    #{class(image)} {\n        overflow: hidden;\n\n        @include break(sm) {\n            width: 50%;\n\n            &:only-child {\n                width: 100%;\n            }\n        }\n\n        img {\n            display: block;\n        }\n    }\n\n    #{class(content)} {\n        padding: $padding;\n        background: css-var(black-2);\n\n        @include break(sm) {\n            width: 50%;\n        }\n\n        :first-child {\n            margin-top: 0;\n        }\n\n        :last-child {\n            margin-bottom: 0;\n        }\n\n        #{class(buttons)} {\n            display: flex;\n            align-items: center;\n\n            & > * {\n                margin-right: 0.5rem;\n            }\n\n            :last-child {\n                margin-right: 0;\n            }\n        }\n    }",
+      "value": "display: flex;\n    flex-direction: column;\n    margin: $padding * 2 0;\n    border-radius: $border-radius;\n    box-shadow: $box-shadow;\n    overflow: hidden;\n\n    @include break(sm) {\n        flex-direction: row;\n\n        &#{class(reverse)} {\n            flex-direction: row-reverse;\n        }\n    }\n\n    &#{class(stagger)} {\n        position: relative;\n\n        @include break(sm) {\n            flex-direction: row-reverse;\n            border-radius: 0;\n            box-shadow: none;\n            overflow: visible;\n\n            #{class(image)} {\n                position: absolute;\n                top: 0;\n                left: 0;\n                width: 50%;\n                height: calc(100% - 3rem);\n                border-radius: $border-radius;\n                box-shadow: $box-shadow;\n\n                img {\n                    height: 100%;\n                    object-fit: cover;\n                }\n            }\n\n            #{class(content)} {\n                width: calc(50% + $padding * 2);\n                margin-top: $padding * 2;\n                border-radius: $border-radius;\n                box-shadow: $box-shadow;\n            }\n        }\n\n        &#{class(reverse)} {\n            @include break(sm) {\n                flex-direction: row;\n\n                #{class(image)} {\n                    left: auto;\n                    right: 0;\n                }\n            }\n        }\n    }\n\n    & > #{class(image)}:only-child, & > app-image:only-child #{class(image)} {\n        width: 100%;\n    }\n\n    #{class(image)} {\n        overflow: hidden;\n\n        @include break(sm) {\n            width: 50%;\n        }\n\n        img {\n            display: block;\n        }\n    }\n\n    #{class(content)} {\n        padding: $padding;\n        background: css-var(black-2);\n\n        @include break(sm) {\n            width: 50%;\n        }\n\n        :first-child {\n            margin-top: 0;\n        }\n\n        :last-child {\n            margin-bottom: 0;\n        }\n\n        #{class(buttons)} {\n            display: flex;\n            align-items: center;\n\n            & > * {\n                margin-right: 0.5rem;\n            }\n\n            :last-child {\n                margin-right: 0;\n            }\n        }\n    }",
       "line": {
-        "start": 15,
-        "end": 116
+        "start": 16,
+        "end": 122
       }
     },
     "access": "public",
@@ -209,7 +209,7 @@
       "value": "@include css-var(delay-instant, delay(instant));\n    @include css-var(delay-fast, delay(fast));\n    @include css-var(delay-med-fast, delay(med-fast));\n    @include css-var(delay-default, delay(default));\n    @include css-var(delay-med-slow, delay(med-slow));\n    @include css-var(delay-slow, delay(slow));",
       "line": {
         "start": 23,
-        "end": 68
+        "end": 72
       }
     },
     "access": "public",

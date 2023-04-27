@@ -10,6 +10,7 @@
 /// Variables
 $border-radius: 1rem;
 $padding: 1.5rem;
+$box-shadow: 0 0 2rem -0.5rem #{css-var(trans-3)};
 
 /// Card Styles
 #{class(card)} {
@@ -17,6 +18,7 @@ $padding: 1.5rem;
     flex-direction: column;
     margin: $padding * 2 0;
     border-radius: $border-radius;
+    box-shadow: $box-shadow;
     overflow: hidden;
 
     @include break(sm) {
@@ -33,6 +35,8 @@ $padding: 1.5rem;
         @include break(sm) {
             flex-direction: row-reverse;
             border-radius: 0;
+            box-shadow: none;
+            overflow: visible;
 
             #{class(image)} {
                 position: absolute;
@@ -41,6 +45,7 @@ $padding: 1.5rem;
                 width: 50%;
                 height: calc(100% - 3rem);
                 border-radius: $border-radius;
+                box-shadow: $box-shadow;
 
                 img {
                     height: 100%;
@@ -52,6 +57,7 @@ $padding: 1.5rem;
                 width: calc(50% + $padding * 2);
                 margin-top: $padding * 2;
                 border-radius: $border-radius;
+                box-shadow: $box-shadow;
             }
         }
 
@@ -67,15 +73,15 @@ $padding: 1.5rem;
         }
     }
 
+    & > #{class(image)}:only-child, & > app-image:only-child #{class(image)} {
+        width: 100%;
+    }
+
     #{class(image)} {
         overflow: hidden;
 
         @include break(sm) {
             width: 50%;
-
-            &:only-child {
-                width: 100%;
-            }
         }
 
         img {
