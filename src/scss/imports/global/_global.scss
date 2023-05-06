@@ -63,3 +63,11 @@ a, button {
 img {
     width: 100%;
 }
+
+#{class(glow)} {
+    box-shadow: 0 0 2rem -0.5rem css-var(glow-2);
+}
+
+#{class(noglow)} {
+    box-shadow: none !important;
+}

@@ -10,7 +10,7 @@
 /// Variables
 $border-radius: 1rem;
 $padding: 1.5rem;
-$box-shadow: 0 0 2rem -0.5rem #{css-var(trans-3)};
+$box-shadow: 0 0 2rem -0.5rem #{css-var(glow-2)};
 
 /// Card Styles
 #{class(card)} {
@@ -73,7 +73,7 @@ $box-shadow: 0 0 2rem -0.5rem #{css-var(trans-3)};
         }
     }
 
-    & > #{class(image)}:only-child, & > app-image:only-child #{class(image)} {
+    & > #{class(image)}:only-child, & > mint-image:only-child #{class(image)} {
         width: 100%;
     }
 

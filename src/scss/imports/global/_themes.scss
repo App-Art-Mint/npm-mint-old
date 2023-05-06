@@ -37,7 +37,8 @@
     /// Application Colors
     @include shades('black', $black, lighten);
     @include shades('white', $white, darken);
-    @include shades(trans, $trans, darken, 7, 10%, true);
+    @include shades(glow, $trans-light, darken, 7, 10%, true);
+    @include shades(shadow, $trans-dark, darken, 7, 10%, true);
 
     @include shades(brand, $brand);
     @include shades(accent, $accent);

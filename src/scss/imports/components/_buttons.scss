@@ -11,9 +11,10 @@
     display: inline-flex;
     padding: 0 0.75rem;
     border-radius: 1rem;
-    text-decoration: none;
     color: css-var(fore);
     background: css-var(brand-5);
+    text-decoration: none;
+    white-space: nowrap;
 
     @include states(hover, focus, active) {
         color: css-var(back);
