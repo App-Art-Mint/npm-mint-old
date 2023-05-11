@@ -29,7 +29,7 @@
     @include css-var(delay-slow, delay(slow));
 }
 
-#{class(vp-fall-in)} {
+#{class(fall-in)} {
     opacity: 0;
     transform: translateY(-100px);
     transition: all delay(slow), box-shadow delay(slow) delay(med-slow) !important;
@@ -43,6 +43,10 @@
 
     &#{neg(class(show))}, &#{class(loading)} {
         box-shadow: 0 0 0 0 transparent !important;
+    }
+
+    &#{class(fast)} {
+        transition: all delay(fast), box-shadow delay(fast) delay(fast) !important;
     }
 }
 
