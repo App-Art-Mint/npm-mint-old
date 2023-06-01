@@ -1,24 +1,32 @@
 /**
- * Exports
+ * A library for building responsive web applications.
+ * 
+ * @packageDocumentation
  */
 
-// Forward n4v
-export {
-    n4vBar,
-    n4vSelectors,
-    n4vSettings
-} from '@appartmint/n4v';
+/**
+ * Exports
+ */
+// Enums
+export { mintSide } from './imports/enum';
 
-// Forward util
-export {
-    mintUtil,
-    mintSelectors,
-    mintSettings,
-    mintColor,
-    mintDisplay,
-    mintEvent,
-    mintObject,
-    mintText,
-    mintWindow,
-    mintSide
-} from '@appartmint/util';
+// Components
+export { mintHeader } from './imports/components/header';
+
+// Models
+export { mintColor } from './imports/models/color';
+export { mintItem } from './imports/models/item';
+
+// Utilities
+export { mintDisplay } from './imports/util/display';
+export { mintEvent } from './imports/util/event';
+export { mintIcon } from './imports/util/icon';
+export { mintMath } from './imports/util/math';
+export { mintObject } from './imports/util/object';
+export { mintText } from './imports/util/text';
+export { mintWindow } from './imports/util/window';
+
+// Objects
+export { mintSelectors } from './imports/util/selectors';
+export { mintSettings } from './imports/util/settings';
+export { mintUtil, default } from './util';

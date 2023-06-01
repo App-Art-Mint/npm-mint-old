@@ -1,7 +1,7 @@
 {
   "name": "@appartmint/mint",
   "author": "App/Art Mint",
-  "version": "0.8.13",
+  "version": "0.9.0",
   "license": "MIT",
   "description": "The front-end TS/SCSS framework of App/Art Mint",
   "keywords": [
@@ -64,10 +64,6 @@
     "watch:prod": "cross-env NODE_ENV=production npm run watch",
     "watch:tsdoc": "npm run build:tsdoc -- --watch",
     "test": "echo '\nRun tests here!\n'"
-  },
-  "dependencies": {
-    "@appartmint/n4v": "^0.8.10",
-    "@appartmint/util": "^0.7.5"
   },
   "devDependencies": {
     "@appartmint/config": "^0.6.5",
