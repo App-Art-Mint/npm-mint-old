@@ -42,9 +42,14 @@ html, body {
     }
 }
 
+p {
+    line-height: 1.75;
+}
+
 @for $i from 1 through 6 {
     h#{$i}, #{class(h#{$i})} {
         font-family: $font-secondary, $font-backups;
+        line-height: 1;
     }
 }
 

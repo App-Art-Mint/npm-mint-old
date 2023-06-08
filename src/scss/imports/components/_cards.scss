@@ -11,6 +11,7 @@
 $border-radius: 1rem;
 $padding: 1.5rem;
 $box-shadow: 0 0 2rem -0.5rem #{css-var(glow-2)};
+$logo-size: 4rem;
 
 /// Card Styles
 #{class(card)} {
@@ -38,7 +39,8 @@ $box-shadow: 0 0 2rem -0.5rem #{css-var(glow-2)};
             box-shadow: none;
             overflow: visible;
 
-            #{class(image)} {
+            & > #{class(image)},
+            & > mint-image #{class(image)} {
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -53,7 +55,7 @@ $box-shadow: 0 0 2rem -0.5rem #{css-var(glow-2)};
                 }
             }
 
-            #{class(content)} {
+            & > #{class(content)} {
                 width: calc(50% + $padding * 2);
                 margin-top: $padding * 2;
                 border-radius: $border-radius;
@@ -65,7 +67,8 @@ $box-shadow: 0 0 2rem -0.5rem #{css-var(glow-2)};
             @include break(sm) {
                 flex-direction: row;
 
-                #{class(image)} {
+                & > #{class(image)},
+                & > mint-image #{class(image)} {
                     left: auto;
                     right: 0;
                 }
@@ -73,19 +76,17 @@ $box-shadow: 0 0 2rem -0.5rem #{css-var(glow-2)};
         }
     }
 
-    & > #{class(image)}:only-child, & > mint-image:only-child #{class(image)} {
+    & > #{class(image)}:only-child,
+    & > mint-image:only-child #{class(image)} {
         width: 100%;
     }
 
-    #{class(image)} {
+    & > #{class(image)},
+    & > mint-image #{class(image)} {
         overflow: hidden;
 
         @include break(sm) {
             width: 50%;
-        }
-
-        img {
-            display: block;
         }
     }
 
@@ -105,16 +106,32 @@ $box-shadow: 0 0 2rem -0.5rem #{css-var(glow-2)};
             margin-bottom: 0;
         }
 
-        #{class(buttons)} {
+        #{class(title)} {
             display: flex;
             align-items: center;
+            justify-content: flex-start;
 
-            & > * {
-                margin-right: 0.5rem;
+            & > #{class(image)},
+            & > mint-image {
+                width: 100%;
+                height: 100%;
+                max-width: $logo-size;
+                max-height: $logo-size;
+                margin-right: 1rem;
+                
+                img {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                }
             }
 
-            :last-child {
-                margin-right: 0;
+            div {
+                width: 100%;
+
+                & > * {
+                    margin: 0;
+                }
             }
         }
     }

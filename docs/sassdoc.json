@@ -372,6 +372,78 @@
     },
     "usedBy": [
       {
+        "description": "Generates flex utility classes\n",
+        "context": {
+          "type": "mixin",
+          "name": "flex-util",
+          "code": "\n    & {\n        display: flex;\n        align-items: center;\n        justify-content: flex-start;\n        flex-wrap: wrap;\n\n        &#{class(center)} {\n            justify-content: center;\n        }\n\n        &#{class(end)} {\n            justify-content: flex-end;\n        }\n\n        &#{class(between)} {\n            justify-content: space-between;\n        }\n\n        &#{class(around)} {\n            justify-content: space-around;\n        }\n\n        &#{class(even)} {\n            justify-content: space-evenly;\n        }\n    }\n",
+          "line": {
+            "start": 719,
+            "end": 746
+          }
+        }
+      },
+      {
+        "description": "Generates flex utility classes\n",
+        "context": {
+          "type": "mixin",
+          "name": "flex-util",
+          "code": "\n    & {\n        display: flex;\n        align-items: center;\n        justify-content: flex-start;\n        flex-wrap: wrap;\n\n        &#{class(center)} {\n            justify-content: center;\n        }\n\n        &#{class(end)} {\n            justify-content: flex-end;\n        }\n\n        &#{class(between)} {\n            justify-content: space-between;\n        }\n\n        &#{class(around)} {\n            justify-content: space-around;\n        }\n\n        &#{class(even)} {\n            justify-content: space-evenly;\n        }\n    }\n",
+          "line": {
+            "start": 719,
+            "end": 746
+          }
+        }
+      },
+      {
+        "description": "Generates flex utility classes\n",
+        "context": {
+          "type": "mixin",
+          "name": "flex-util",
+          "code": "\n    & {\n        display: flex;\n        align-items: center;\n        justify-content: flex-start;\n        flex-wrap: wrap;\n\n        &#{class(center)} {\n            justify-content: center;\n        }\n\n        &#{class(end)} {\n            justify-content: flex-end;\n        }\n\n        &#{class(between)} {\n            justify-content: space-between;\n        }\n\n        &#{class(around)} {\n            justify-content: space-around;\n        }\n\n        &#{class(even)} {\n            justify-content: space-evenly;\n        }\n    }\n",
+          "line": {
+            "start": 719,
+            "end": 746
+          }
+        }
+      },
+      {
+        "description": "Generates flex utility classes\n",
+        "context": {
+          "type": "mixin",
+          "name": "flex-util",
+          "code": "\n    & {\n        display: flex;\n        align-items: center;\n        justify-content: flex-start;\n        flex-wrap: wrap;\n\n        &#{class(center)} {\n            justify-content: center;\n        }\n\n        &#{class(end)} {\n            justify-content: flex-end;\n        }\n\n        &#{class(between)} {\n            justify-content: space-between;\n        }\n\n        &#{class(around)} {\n            justify-content: space-around;\n        }\n\n        &#{class(even)} {\n            justify-content: space-evenly;\n        }\n    }\n",
+          "line": {
+            "start": 719,
+            "end": 746
+          }
+        }
+      },
+      {
+        "description": "Generates flex utility classes\n",
+        "context": {
+          "type": "mixin",
+          "name": "flex-util",
+          "code": "\n    & {\n        display: flex;\n        align-items: center;\n        justify-content: flex-start;\n        flex-wrap: wrap;\n\n        &#{class(center)} {\n            justify-content: center;\n        }\n\n        &#{class(end)} {\n            justify-content: flex-end;\n        }\n\n        &#{class(between)} {\n            justify-content: space-between;\n        }\n\n        &#{class(around)} {\n            justify-content: space-around;\n        }\n\n        &#{class(even)} {\n            justify-content: space-evenly;\n        }\n    }\n",
+          "line": {
+            "start": 719,
+            "end": 746
+          }
+        }
+      },
+      {
+        "description": "Mixins\nRegister an animation\n",
+        "context": {
+          "type": "mixin",
+          "name": "animation",
+          "code": "\n    $animations: map-merge($animations, (&: map-merge(map.get($animations, &), $animation)));\n    $this: map.get($animations, &);\n    $animation: '';\n\n    & {\n        @each $item in $this {\n            @if (list.index($this, $item) != 1) {\n                $animation: #{$animation},;\n            }\n            $animation: #{$animation}#{$item};\n        }\n        animation: $animation;\n\n        @each $name, $items in $animations {\n            &#{class($name)} {\n                animation: $animation;\n            }\n        }\n    }\n",
+          "line": {
+            "start": 19,
+            "end": 39
+          }
+        }
+      },
+      {
         "description": "TODO: Document this\n",
         "context": {
           "type": "mixin",
@@ -1935,6 +2007,52 @@
     }
   },
   {
+    "description": "Generates flex utility classes\n",
+    "commentRange": {
+      "start": 715,
+      "end": 718
+    },
+    "context": {
+      "type": "mixin",
+      "name": "flex-util",
+      "code": "\n    & {\n        display: flex;\n        align-items: center;\n        justify-content: flex-start;\n        flex-wrap: wrap;\n\n        &#{class(center)} {\n            justify-content: center;\n        }\n\n        &#{class(end)} {\n            justify-content: flex-end;\n        }\n\n        &#{class(between)} {\n            justify-content: space-between;\n        }\n\n        &#{class(around)} {\n            justify-content: space-around;\n        }\n\n        &#{class(even)} {\n            justify-content: space-evenly;\n        }\n    }\n",
+      "line": {
+        "start": 719,
+        "end": 746
+      }
+    },
+    "group": [
+      "mixins"
+    ],
+    "access": "public",
+    "require": [
+      {
+        "type": "function",
+        "name": "class"
+      },
+      {
+        "type": "function",
+        "name": "class"
+      },
+      {
+        "type": "function",
+        "name": "class"
+      },
+      {
+        "type": "function",
+        "name": "class"
+      },
+      {
+        "type": "function",
+        "name": "class"
+      }
+    ],
+    "file": {
+      "path": "imports/util/_util.scss",
+      "name": "_util.scss"
+    }
+  },
+  {
     "description": "Background Styles\n",
     "commentRange": {
       "start": 10,
@@ -1966,6 +2084,103 @@
     },
     "context": {
       "type": "variable",
+      "name": "break-1",
+      "value": "xs",
+      "scope": "private",
+      "line": {
+        "start": 11,
+        "end": 11
+      }
+    },
+    "access": "public",
+    "group": [
+      "undefined"
+    ],
+    "file": {
+      "path": "imports/components/_buttons.scss",
+      "name": "_buttons.scss"
+    }
+  },
+  {
+    "description": "A pill button\n",
+    "commentRange": {
+      "start": 13,
+      "end": 13
+    },
+    "context": {
+      "type": "css",
+      "name": "#{class(pill)}",
+      "value": "display: inline-block;\n    align-items: center;\n    min-width: 5rem;\n    padding: 0 0.75rem;\n    border-radius: 1rem;\n    color: css-var(fore);\n    background: css-var(brand-5);\n    line-height: 2;\n    text-align: center;\n    text-decoration: none;\n    text-overflow: ellipsis;\n    white-space: nowrap;\n    overflow: hidden;\n\n    @include break($break-1) {\n        width: auto;\n    }\n\n    @include states(hover, focus, active) {\n        color: css-var(back);\n        background: css-var(brand-3);\n        outline-color: css-var(brand-0);\n    }\n\n    &#{class(alt)} {\n        color: css-var(brand-3);\n        background: css-var(trans);\n\n        @include states(hover, focus, active) {\n            color: css-var(fore);\n            background: css-var(trans);\n            outline-color: css-var(accent-2);\n        }\n    }",
+      "line": {
+        "start": 14,
+        "end": 79
+      }
+    },
+    "access": "public",
+    "group": [
+      "undefined"
+    ],
+    "file": {
+      "path": "imports/components/_buttons.scss",
+      "name": "_buttons.scss"
+    }
+  },
+  {
+    "description": "A list of buttons\n",
+    "commentRange": {
+      "start": 51,
+      "end": 51
+    },
+    "context": {
+      "type": "css",
+      "name": "#{class(buttons)}",
+      "value": "@include flex-util();\n\n    & > * {\n        width: 100%;\n        margin: 0.5rem 0;\n\n        @include break($break-1) {\n            width: auto;\n            margin: 0.5rem;\n        }\n    }\n\n    #{class(buttons)} {\n        #{class(pill)} {\n            width: 100%;\n        }\n    }",
+      "line": {
+        "start": 52,
+        "end": 79
+      }
+    },
+    "access": "public",
+    "group": [
+      "undefined"
+    ],
+    "file": {
+      "path": "imports/components/_buttons.scss",
+      "name": "_buttons.scss"
+    }
+  },
+  {
+    "description": "Buttons within a paragraph\n",
+    "commentRange": {
+      "start": 72,
+      "end": 72
+    },
+    "context": {
+      "type": "css",
+      "name": "p",
+      "value": "#{class(pill)} {\n        line-height: 1.5rem;\n        vertical-align: middle;\n    }",
+      "line": {
+        "start": 73,
+        "end": 79
+      }
+    },
+    "access": "public",
+    "group": [
+      "undefined"
+    ],
+    "file": {
+      "path": "imports/components/_buttons.scss",
+      "name": "_buttons.scss"
+    }
+  },
+  {
+    "description": "Variables\n",
+    "commentRange": {
+      "start": 10,
+      "end": 10
+    },
+    "context": {
+      "type": "variable",
       "name": "border-radius",
       "value": "1rem",
       "scope": "private",
@@ -1986,16 +2201,16 @@
   {
     "description": "Card Styles\n",
     "commentRange": {
-      "start": 15,
-      "end": 15
+      "start": 16,
+      "end": 16
     },
     "context": {
       "type": "css",
       "name": "#{class(card)}",
-      "value": "display: flex;\n    flex-direction: column;\n    margin: $padding * 2 0;\n    border-radius: $border-radius;\n    box-shadow: $box-shadow;\n    overflow: hidden;\n\n    @include break(sm) {\n        flex-direction: row;\n\n        &#{class(reverse)} {\n            flex-direction: row-reverse;\n        }\n    }\n\n    &#{class(stagger)} {\n        position: relative;\n\n        @include break(sm) {\n            flex-direction: row-reverse;\n            border-radius: 0;\n            box-shadow: none;\n            overflow: visible;\n\n            #{class(image)} {\n                position: absolute;\n                top: 0;\n                left: 0;\n                width: 50%;\n                height: calc(100% - 3rem);\n                border-radius: $border-radius;\n                box-shadow: $box-shadow;\n\n                img {\n                    height: 100%;\n                    object-fit: cover;\n                }\n            }\n\n            #{class(content)} {\n                width: calc(50% + $padding * 2);\n                margin-top: $padding * 2;\n                border-radius: $border-radius;\n                box-shadow: $box-shadow;\n            }\n        }\n\n        &#{class(reverse)} {\n            @include break(sm) {\n                flex-direction: row;\n\n                #{class(image)} {\n                    left: auto;\n                    right: 0;\n                }\n            }\n        }\n    }\n\n    & > #{class(image)}:only-child, & > mint-image:only-child #{class(image)} {\n        width: 100%;\n    }\n\n    #{class(image)} {\n        overflow: hidden;\n\n        @include break(sm) {\n            width: 50%;\n        }\n\n        img {\n            display: block;\n        }\n    }\n\n    #{class(content)} {\n        padding: $padding;\n        background: css-var(black-2);\n\n        @include break(sm) {\n            width: 50%;\n        }\n\n        :first-child {\n            margin-top: 0;\n        }\n\n        :last-child {\n            margin-bottom: 0;\n        }\n\n        #{class(buttons)} {\n            display: flex;\n            align-items: center;\n\n            & > * {\n                margin-right: 0.5rem;\n            }\n\n            :last-child {\n                margin-right: 0;\n            }\n        }\n    }",
+      "value": "display: flex;\n    flex-direction: column;\n    margin: $padding * 2 0;\n    border-radius: $border-radius;\n    box-shadow: $box-shadow;\n    overflow: hidden;\n\n    @include break(sm) {\n        flex-direction: row;\n\n        &#{class(reverse)} {\n            flex-direction: row-reverse;\n        }\n    }\n\n    &#{class(stagger)} {\n        position: relative;\n\n        @include break(sm) {\n            flex-direction: row-reverse;\n            border-radius: 0;\n            box-shadow: none;\n            overflow: visible;\n\n            & > #{class(image)},\n            & > mint-image #{class(image)} {\n                position: absolute;\n                top: 0;\n                left: 0;\n                width: 50%;\n                height: calc(100% - 3rem);\n                border-radius: $border-radius;\n                box-shadow: $box-shadow;\n\n                img {\n                    height: 100%;\n                    object-fit: cover;\n                }\n            }\n\n            & > #{class(content)} {\n                width: calc(50% + $padding * 2);\n                margin-top: $padding * 2;\n                border-radius: $border-radius;\n                box-shadow: $box-shadow;\n            }\n        }\n\n        &#{class(reverse)} {\n            @include break(sm) {\n                flex-direction: row;\n\n                & > #{class(image)},\n                & > mint-image #{class(image)} {\n                    left: auto;\n                    right: 0;\n                }\n            }\n        }\n    }\n\n    & > #{class(image)}:only-child,\n    & > mint-image:only-child #{class(image)} {\n        width: 100%;\n    }\n\n    & > #{class(image)},\n    & > mint-image #{class(image)} {\n        overflow: hidden;\n\n        @include break(sm) {\n            width: 50%;\n        }\n    }\n\n    #{class(content)} {\n        padding: $padding;\n        background: css-var(black-2);\n\n        @include break(sm) {\n            width: 50%;\n        }\n\n        :first-child {\n            margin-top: 0;\n        }\n\n        :last-child {\n            margin-bottom: 0;\n        }\n\n        #{class(title)} {\n            display: flex;\n            align-items: center;\n            justify-content: flex-start;\n\n            & > #{class(image)},\n            & > mint-image {\n                width: 100%;\n                height: 100%;\n                max-width: $logo-size;\n                max-height: $logo-size;\n                margin-right: 1rem;\n                \n                img {\n                    display: block;\n                    width: 100%;\n                    height: 100%;\n                }\n            }\n\n            div {\n                width: 100%;\n\n                & > * {\n                    margin: 0;\n                }\n            }\n        }\n    }",
       "line": {
-        "start": 16,
-        "end": 122
+        "start": 17,
+        "end": 139
       }
     },
     "access": "public",
@@ -2056,18 +2271,229 @@
     }
   },
   {
+    "description": "Variables\n",
+    "commentRange": {
+      "start": 10,
+      "end": 10
+    },
+    "context": {
+      "type": "variable",
+      "name": "shadow-color",
+      "value": "rgba(0, 0, 0, 0.4)",
+      "scope": "private",
+      "line": {
+        "start": 11,
+        "end": 11
+      }
+    },
+    "access": "public",
+    "group": [
+      "undefined"
+    ],
+    "file": {
+      "path": "imports/components/_image.scss",
+      "name": "_image.scss"
+    }
+  },
+  {
+    "description": "Image styles\n",
+    "commentRange": {
+      "start": 14,
+      "end": 14
+    },
+    "context": {
+      "type": "css",
+      "name": "#{class(image)}",
+      "value": "&#{class(error)} {\n        &::after {\n            content: '❌ Image failed to load. This is a placeholder.';\n            position: absolute;\n            bottom: 0;\n            left: 0;\n            width: 100%;\n            padding: 0 $shadow-size $shadow-size $shadow-size;\n            background: $shadow-color;\n            box-shadow: 0 0 $shadow-size $shadow-size $shadow-color;\n            text-align: center;\n        }\n    }\n\n    img {\n        display: block;\n    }",
+      "line": {
+        "start": 15,
+        "end": 34
+      }
+    },
+    "access": "public",
+    "group": [
+      "undefined"
+    ],
+    "file": {
+      "path": "imports/components/_image.scss",
+      "name": "_image.scss"
+    }
+  },
+  {
+    "description": "Variables\n",
+    "commentRange": {
+      "start": 13,
+      "end": 13
+    },
+    "context": {
+      "type": "variable",
+      "name": "animations",
+      "value": "(())",
+      "scope": "private",
+      "line": {
+        "start": 14,
+        "end": 14
+      }
+    },
+    "access": "public",
+    "group": [
+      "undefined"
+    ],
+    "file": {
+      "path": "imports/global/_animations.scss",
+      "name": "_animations.scss"
+    },
+    "usedBy": [
+      {
+        "description": "Mixins\nRegister an animation\n",
+        "context": {
+          "type": "mixin",
+          "name": "animation",
+          "code": "\n    $animations: map-merge($animations, (&: map-merge(map.get($animations, &), $animation)));\n    $this: map.get($animations, &);\n    $animation: '';\n\n    & {\n        @each $item in $this {\n            @if (list.index($this, $item) != 1) {\n                $animation: #{$animation},;\n            }\n            $animation: #{$animation}#{$item};\n        }\n        animation: $animation;\n\n        @each $name, $items in $animations {\n            &#{class($name)} {\n                animation: $animation;\n            }\n        }\n    }\n",
+          "line": {
+            "start": 19,
+            "end": 39
+          }
+        }
+      },
+      {
+        "description": "Mixins\nRegister an animation\n",
+        "context": {
+          "type": "mixin",
+          "name": "animation",
+          "code": "\n    $animations: map-merge($animations, (&: map-merge(map.get($animations, &), $animation)));\n    $this: map.get($animations, &);\n    $animation: '';\n\n    & {\n        @each $item in $this {\n            @if (list.index($this, $item) != 1) {\n                $animation: #{$animation},;\n            }\n            $animation: #{$animation}#{$item};\n        }\n        animation: $animation;\n\n        @each $name, $items in $animations {\n            &#{class($name)} {\n                animation: $animation;\n            }\n        }\n    }\n",
+          "line": {
+            "start": 19,
+            "end": 39
+          }
+        }
+      },
+      {
+        "description": "Mixins\nRegister an animation\n",
+        "context": {
+          "type": "mixin",
+          "name": "animation",
+          "code": "\n    $animations: map-merge($animations, (&: map-merge(map.get($animations, &), $animation)));\n    $this: map.get($animations, &);\n    $animation: '';\n\n    & {\n        @each $item in $this {\n            @if (list.index($this, $item) != 1) {\n                $animation: #{$animation},;\n            }\n            $animation: #{$animation}#{$item};\n        }\n        animation: $animation;\n\n        @each $name, $items in $animations {\n            &#{class($name)} {\n                animation: $animation;\n            }\n        }\n    }\n",
+          "line": {
+            "start": 19,
+            "end": 39
+          }
+        }
+      },
+      {
+        "description": "Mixins\nRegister an animation\n",
+        "context": {
+          "type": "mixin",
+          "name": "animation",
+          "code": "\n    $animations: map-merge($animations, (&: map-merge(map.get($animations, &), $animation)));\n    $this: map.get($animations, &);\n    $animation: '';\n\n    & {\n        @each $item in $this {\n            @if (list.index($this, $item) != 1) {\n                $animation: #{$animation},;\n            }\n            $animation: #{$animation}#{$item};\n        }\n        animation: $animation;\n\n        @each $name, $items in $animations {\n            &#{class($name)} {\n                animation: $animation;\n            }\n        }\n    }\n",
+          "line": {
+            "start": 19,
+            "end": 39
+          }
+        }
+      },
+      {
+        "description": "Mixins\nRegister an animation\n",
+        "context": {
+          "type": "mixin",
+          "name": "animation",
+          "code": "\n    $animations: map-merge($animations, (&: map-merge(map.get($animations, &), $animation)));\n    $this: map.get($animations, &);\n    $animation: '';\n\n    & {\n        @each $item in $this {\n            @if (list.index($this, $item) != 1) {\n                $animation: #{$animation},;\n            }\n            $animation: #{$animation}#{$item};\n        }\n        animation: $animation;\n\n        @each $name, $items in $animations {\n            &#{class($name)} {\n                animation: $animation;\n            }\n        }\n    }\n",
+          "line": {
+            "start": 19,
+            "end": 39
+          }
+        }
+      }
+    ]
+  },
+  {
+    "description": "Mixins\nRegister an animation\n",
+    "commentRange": {
+      "start": 17,
+      "end": 18
+    },
+    "context": {
+      "type": "mixin",
+      "name": "animation",
+      "code": "\n    $animations: map-merge($animations, (&: map-merge(map.get($animations, &), $animation)));\n    $this: map.get($animations, &);\n    $animation: '';\n\n    & {\n        @each $item in $this {\n            @if (list.index($this, $item) != 1) {\n                $animation: #{$animation},;\n            }\n            $animation: #{$animation}#{$item};\n        }\n        animation: $animation;\n\n        @each $name, $items in $animations {\n            &#{class($name)} {\n                animation: $animation;\n            }\n        }\n    }\n",
+      "line": {
+        "start": 19,
+        "end": 39
+      }
+    },
+    "access": "public",
+    "group": [
+      "undefined"
+    ],
+    "require": [
+      {
+        "type": "function",
+        "name": "class"
+      },
+      {
+        "type": "variable",
+        "name": "animations"
+      },
+      {
+        "type": "variable",
+        "name": "animations"
+      },
+      {
+        "type": "variable",
+        "name": "animations"
+      },
+      {
+        "type": "variable",
+        "name": "animations"
+      },
+      {
+        "type": "variable",
+        "name": "animations"
+      }
+    ],
+    "file": {
+      "path": "imports/global/_animations.scss",
+      "name": "_animations.scss"
+    }
+  },
+  {
+    "description": "Register a transition\n",
+    "commentRange": {
+      "start": 41,
+      "end": 41
+    },
+    "context": {
+      "type": "mixin",
+      "name": "transition",
+      "code": "\n    $transitions: map-merge($transitions, ($name: $transition));\n",
+      "line": {
+        "start": 42,
+        "end": 44
+      }
+    },
+    "access": "public",
+    "group": [
+      "undefined"
+    ],
+    "require": [],
+    "file": {
+      "path": "imports/global/_animations.scss",
+      "name": "_animations.scss"
+    }
+  },
+  {
     "description": "CSS variables\n",
     "commentRange": {
-      "start": 22,
-      "end": 22
+      "start": 57,
+      "end": 57
     },
     "context": {
       "type": "css",
       "name": ":root",
       "value": "@include css-var(delay-instant, delay(instant));\n    @include css-var(delay-fast, delay(fast));\n    @include css-var(delay-med-fast, delay(med-fast));\n    @include css-var(delay-default, delay(default));\n    @include css-var(delay-med-slow, delay(med-slow));\n    @include css-var(delay-slow, delay(slow));",
       "line": {
-        "start": 23,
-        "end": 76
+        "start": 58,
+        "end": 111
       }
     },
     "access": "public",
@@ -2189,7 +2615,7 @@
       "value": "font-family: $font-primary, $font-backups;\n    font-size: 1rem;\n\n    @include break(md) {\n        font-size: 1.125rem;\n    }",
       "line": {
         "start": 36,
-        "end": 61
+        "end": 66
       }
     },
     "access": "public",
@@ -2489,7 +2915,7 @@
       "value": "Number",
       "line": {
         "start": 103,
-        "end": 714
+        "end": 747
       }
     },
     "author": [

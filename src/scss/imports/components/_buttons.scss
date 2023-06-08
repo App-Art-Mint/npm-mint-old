@@ -7,15 +7,28 @@
 /// Imports
 @use '../util' as *;
 
+/// Variables
+$break-1: xs;
+
+/// A pill button
 #{class(pill)} {
-    display: inline-flex;
+    display: inline-block;
     align-items: center;
+    min-width: 5rem;
     padding: 0 0.75rem;
     border-radius: 1rem;
     color: css-var(fore);
     background: css-var(brand-5);
+    line-height: 2;
+    text-align: center;
     text-decoration: none;
+    text-overflow: ellipsis;
     white-space: nowrap;
+    overflow: hidden;
+
+    @include break($break-1) {
+        width: auto;
+    }
 
     @include states(hover, focus, active) {
         color: css-var(back);
@@ -32,5 +45,34 @@
             background: css-var(trans);
             outline-color: css-var(accent-2);
         }
+    }
+}
+
+/// A list of buttons
+#{class(buttons)} {
+    @include flex-util();
+
+    & > * {
+        width: 100%;
+        margin: 0.5rem 0;
+
+        @include break($break-1) {
+            width: auto;
+            margin: 0.5rem;
+        }
+    }
+
+    #{class(buttons)} {
+        #{class(pill)} {
+            width: 100%;
+        }
+    }
+}
+
+/// Buttons within a paragraph
+p {
+    #{class(pill)} {
+        line-height: 1.5rem;
+        vertical-align: middle;
     }
 }

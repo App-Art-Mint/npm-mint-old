@@ -6,7 +6,42 @@
 
 /// Imports
 @use 'sass:math';
+@use 'sass:map';
+@use 'sass:list';
 @use '../util' as *;
+
+/// Variables
+$animations: (());
+$transitions: (());
+
+/// Mixins
+/// Register an animation
+@mixin animation($animation) {
+    $animations: map-merge($animations, (&: map-merge(map.get($animations, &), $animation)));
+    $this: map.get($animations, &);
+    $animation: '';
+
+    & {
+        @each $item in $this {
+            @if (list.index($this, $item) != 1) {
+                $animation: #{$animation},;
+            }
+            $animation: #{$animation}#{$item};
+        }
+        animation: $animation;
+
+        @each $name, $items in $animations {
+            &#{class($name)} {
+                animation: $animation;
+            }
+        }
+    }
+}
+
+/// Register a transition
+@mixin transition($transition) {
+    $transitions: map-merge($transitions, ($name: $transition));
+}
 
 /// Animations
 /// Cycle through instagram colors
@@ -32,7 +67,7 @@
 #{class(fall-in)} {
     opacity: 0;
     transform: translateY(-100px);
-    transition: all delay(slow), box-shadow delay(slow) delay(med-slow) !important;
+    transition: all delay(slow) ease-out, box-shadow delay(slow) delay(med-slow) ease-out !important;
     pointer-events: none;
 
     &#{class(show)}#{neg(class(loading))} {
@@ -70,6 +105,6 @@
         height: 100%;
         transform: translate(-100%, 100%);
         background: linear-gradient(45deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.15) 50%, rgba(255,255,255,0) 100%);
-        transition: transform delay(med-fast) ease-in;
+        transition: transform delay(med-fast) ease-out;
     }
 }

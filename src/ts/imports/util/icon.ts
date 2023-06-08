@@ -14,22 +14,18 @@ export abstract class mintIcon {
         'a[href^="http"]': 'fas fa-up-right-from-square',
         'a[href^="mailto:"]': 'far fa-envelope',
         'a[href^="tel:"]': 'fas fa-phone-flip',
-        'a[href^="sms:"]': 'far fa-message',
-
+        'a[href^="sms:"]': 'far fa-message'
     };
 
     /**
-     * Appends the given icon to the given selector
+     * Appends the given icon to the given selector if there is not already an icon appended
      */
     static append (icon: string, selector: string): void {
         let items: NodeListOf<HTMLElement> = document.querySelectorAll(selector);
         items.forEach((item: HTMLElement) => {
-            let currentIcon: HTMLElement | null = item.querySelector('i'),
-                iconElement: HTMLElement = document.createElement('i');
+            let iconElement: HTMLElement = document.createElement('i');
             iconElement.classList.add(...icon.split(' '));
-            if (currentIcon) {
-                item.replaceChild(iconElement, currentIcon);
-            } else {
+            if (!item.querySelector('i')) {
                 item.appendChild(iconElement);
             }
         });
@@ -47,6 +43,20 @@ export abstract class mintIcon {
 
         Object.keys(activeIcons).forEach((selector: string) => {
             this.append(activeIcons[selector], selector);
+        });
+    }
+
+    /**
+     * Removes the given icon from the given selector
+     * @param icon - the icon to remove
+     */
+    static remove (icon: string, selector: string): void {
+        let items: NodeListOf<HTMLElement> = document.querySelectorAll(selector);
+        items.forEach((item: HTMLElement) => {
+            let iconElement: HTMLElement | null = item.querySelector('i');
+            if (iconElement) {
+                iconElement.remove();
+            }
         });
     }
 };

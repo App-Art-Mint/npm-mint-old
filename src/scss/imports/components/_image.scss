@@ -1,0 +1,33 @@
+/// _image.scss - Image styles
+/// @author App/Art Mint
+/// 
+/// @group Components
+@charset 'utf-8';
+
+/// Imports
+@use '../util' as *;
+
+/// Variables
+$shadow-color: rgba(0, 0, 0, 0.4);
+$shadow-size: 0.5rem;
+
+/// Image styles
+#{class(image)} {
+    &#{class(error)} {
+        &::after {
+            content: '❌ Image failed to load. This is a placeholder.';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 0 $shadow-size $shadow-size $shadow-size;
+            background: $shadow-color;
+            box-shadow: 0 0 $shadow-size $shadow-size $shadow-color;
+            text-align: center;
+        }
+    }
+
+    img {
+        display: block;
+    }
+}
