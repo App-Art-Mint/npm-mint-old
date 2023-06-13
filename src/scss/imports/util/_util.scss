@@ -744,3 +744,15 @@ $bootstrap5: false !default;
         }
     }
 }
+
+/// Selector for all headers
+/// @group Mixins
+/// 
+/// 
+@mixin headers () {
+    @for $i from 1 through 6 {
+        h#{$i}, #{class(h#{$i})} {
+            @content;
+        }
+    }
+}

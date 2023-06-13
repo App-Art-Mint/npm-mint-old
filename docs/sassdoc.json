@@ -432,6 +432,18 @@
         }
       },
       {
+        "description": "Selector for all headers\n",
+        "context": {
+          "type": "mixin",
+          "name": "headers",
+          "code": "\n    @for $i from 1 through 6 {\n        h#{$i}, #{class(h#{$i})} {\n            @content;\n        }\n    }\n",
+          "line": {
+            "start": 752,
+            "end": 758
+          }
+        }
+      },
+      {
         "description": "Mixins\nRegister an animation\n",
         "context": {
           "type": "mixin",
@@ -2053,6 +2065,37 @@
     }
   },
   {
+    "description": "Selector for all headers\n",
+    "commentRange": {
+      "start": 748,
+      "end": 751
+    },
+    "context": {
+      "type": "mixin",
+      "name": "headers",
+      "code": "\n    @for $i from 1 through 6 {\n        h#{$i}, #{class(h#{$i})} {\n            @content;\n        }\n    }\n",
+      "line": {
+        "start": 752,
+        "end": 758
+      }
+    },
+    "group": [
+      "mixins"
+    ],
+    "access": "public",
+    "content": "",
+    "require": [
+      {
+        "type": "function",
+        "name": "class"
+      }
+    ],
+    "file": {
+      "path": "imports/util/_util.scss",
+      "name": "_util.scss"
+    }
+  },
+  {
     "description": "Background Styles\n",
     "commentRange": {
       "start": 10,
@@ -2223,7 +2266,7 @@
     }
   },
   {
-    "description": "CSS variables\n",
+    "description": "CSS Variables\n",
     "commentRange": {
       "start": 10,
       "end": 10
@@ -2231,10 +2274,10 @@
     "context": {
       "type": "css",
       "name": ":root",
-      "value": "@include css-var(delay-instant, delay(instant));\n    @include css-var(delay-fast, delay(fast));\n    @include css-var(delay-med-fast, delay(med-fast));\n    @include css-var(delay-default, delay(default));\n    @include css-var(delay-med-slow, delay(med-slow));\n    @include css-var(delay-slow, delay(slow));",
+      "value": "@include css-var(header-height, $header-height);\n    @include css-var-ref(header-bg, $header-bg);\n    @include css-var-ref(header-fg, $header-fg);",
       "line": {
         "start": 11,
-        "end": 197
+        "end": 196
       }
     },
     "access": "public",
@@ -2247,18 +2290,18 @@
     }
   },
   {
-    "description": "Styles\n",
+    "description": "Header Styles\n",
     "commentRange": {
-      "start": 20,
-      "end": 20
+      "start": 17,
+      "end": 17
     },
     "context": {
       "type": "css",
-      "name": "#{class(sr-only)}",
-      "value": "position: absolute !important;\n    width: 1px !important;\n    height: 1px !important;\n    padding: 0 !important;\n    margin: -1px !important;\n    overflow: hidden !important;\n    clip: rect(0, 0, 0, 0) !important;\n    border: 0 !important;",
+      "name": "#{id(header)}",
+      "value": "display: flex;\n    flex-direction: column;\n    position: relative;\n    width: 100%;\n    color: css-var(header-fg);\n    background-color: css-var(header-bg);\n    z-index: 1000;\n\n    &#{class(js)} {\n        align-items: center;\n        flex-direction: row;\n        height: css-var(header-height);\n        padding: calc(css-var(header-height) / 2);\n\n        #{controls(wrapper)} {\n            display: inline-block;\n        }\n\n        #{$has-controls + neg(controls(wrapper))} {\n            & + ul {\n                display: flex;\n                flex-direction: column;\n                height: 0;\n                overflow: hidden;\n                transition: height css-var(delay-default), margin css-var(delay-default);\n            }\n            \n            &#{$has-expanded + neg(expanded(true))} {\n                & + ul {\n                    margin: 0;\n                }\n            }\n        }\n\n        &#{class(fixed)} {\n            position: fixed;\n            top: 0;\n            left: 0;\n        }\n        \n        #{id(wrapper)} {\n            background: css-var(bg);\n            transition-duration: css-var(delay-default);\n            transition-property: top, right, bottom, left;\n            overflow: auto;\n        }\n    }\n\n    &.mint-right {\n        #{id(wrapper)} {\n            top: css-var(header-height);\n            right: -100%;\n            left: unset;\n\n            &#{class(open)} {\n                right: 0;\n            }\n        }\n    }\n\n    &.mint-bottom {\n        #{id(wrapper)} {\n            top: unset;\n            bottom: -100%;\n\n            &#{class(open)} {\n                bottom: 0;\n            }\n        }\n    }\n\n    &.mint-left {\n        #{id(wrapper)} {\n            top: css-var(header-height);\n            left: -100%;\n\n            &#{class(open)} {\n                left: 0;\n            }\n        }\n    }\n\n    &::before {\n        content: '';\n        position: absolute;\n        top: 0;\n        left: 0;\n        width: 100%;\n        height: css-var(header-height);\n        background: css-var(header-bg);\n        z-index: -1;\n    }\n    \n    nav {\n        & > ul {\n            display: flex;\n            flex-direction: column;\n        }\n    }\n    \n    ul {\n        list-style: none;\n        margin-top: 0;\n        margin-bottom: 1rem;\n        padding-left: 0;\n    }\n    \n    a, button {\n        display: flex;\n        align-items: center;\n        width: 100%;\n        margin: 0;\n        border: 0;\n        color: css-var(header-fg);\n        background: css-var(trans);\n    }\n    \n    h1 {\n        display: flex;\n        white-space: nowrap;\n        margin: 0;\n    }\n\n    #{class(logo)} {\n        text-decoration: none;\n        \n        img {\n            max-width: css-var(header-height);\n        }\n    }\n\n    #{controls(wrapper)} {\n        display: none;\n    }\n\n    #{id(wrapper)} {\n        display: flex;\n        flex-direction: column;\n        position: fixed;\n        top: -100%;\n        left: 0;\n        width: 100%;\n        height: calc(100vh - css-var(header-height));\n        transition: none;\n        z-index: -2;\n        \n        &#{class(open)} {\n            top: css-var(header-height);\n        }\n    }\n\n    #{id(widgets)} {\n        position: absolute;\n        top: 0;\n        right: 0;\n        height: css-var(header-height);\n    }\n    \n    #{class(dropdown)} {\n        background: css-var(header-bg);\n\n        button {\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            min-width: css-var(header-height);\n            height: css-var(header-height);\n            padding: calc(css-var(header-height) / 2);\n        }\n\n        li {\n            padding: calc(css-var(header-height) / 2);\n            line-height: 1;\n            cursor: pointer;\n        }\n    }",
       "line": {
-        "start": 21,
-        "end": 197
+        "start": 18,
+        "end": 196
       }
     },
     "access": "public",
@@ -2517,7 +2560,7 @@
       "value": "&, &::before, &::after {\n        box-sizing: border-box;\n    }",
       "line": {
         "start": 5,
-        "end": 78
+        "end": 89
       }
     },
     "access": "public",
@@ -2554,68 +2597,18 @@
     }
   },
   {
-    "description": "Fonts\n",
+    "description": "Text Styles\n",
     "commentRange": {
       "start": 10,
       "end": 10
-    },
-    "context": {
-      "type": "variable",
-      "name": "font-primary",
-      "value": "'Palanquin'",
-      "scope": "default",
-      "line": {
-        "start": 11,
-        "end": 11
-      }
-    },
-    "access": "public",
-    "group": [
-      "undefined"
-    ],
-    "file": {
-      "path": "imports/global/_text.scss",
-      "name": "_text.scss"
-    }
-  },
-  {
-    "description": "Font Sizes\n",
-    "commentRange": {
-      "start": 15,
-      "end": 15
-    },
-    "context": {
-      "type": "variable",
-      "name": "font-size-mobile",
-      "value": "(\n    h1: 2.5rem,\n    h2: 2rem,\n    h3: 1.75rem,\n    h4: 1.5rem,\n    h5: 1.25rem,\n    h6: 1.125rem,\n    p: 1rem,\n)",
-      "scope": "default",
-      "line": {
-        "start": 16,
-        "end": 24
-      }
-    },
-    "access": "public",
-    "group": [
-      "undefined"
-    ],
-    "file": {
-      "path": "imports/global/_text.scss",
-      "name": "_text.scss"
-    }
-  },
-  {
-    "description": "Text Styles\n",
-    "commentRange": {
-      "start": 35,
-      "end": 35
     },
     "context": {
       "type": "css",
       "name": "html, body",
       "value": "font-family: $font-primary, $font-backups;\n    font-size: 1rem;\n\n    @include break(md) {\n        font-size: 1.125rem;\n    }",
       "line": {
-        "start": 36,
-        "end": 66
+        "start": 11,
+        "end": 39
       }
     },
     "access": "public",
@@ -2639,7 +2632,7 @@
       "value": "/// Global Colors\n    /// Brands\n    @include css-var(bitcoin, $bitcoin);\n    @include css-var(ethereum, $ethereum);\n    @include css-var(venmo, $venmo);\n    @include css-var(facebook, $facebook);\n    @include css-var(youtube, $youtube);\n    @include css-var(itunes, $itunes);\n    @include css-var(spotify, $spotify);\n    @include css-var(amazon-0, $amazon-0);\n    @include css-var(amazon-1, $amazon-1);\n    @include css-var(napster-0, $napster-0);\n    @include css-var(napster-1, $napster-1);\n    @include css-var(google-play-0, $google-play-0);\n    @include css-var(google-play-1, $google-play-1);\n    @include css-var(google-play-2, $google-play-2);\n    @include css-var(instagram-0, $instagram-0);\n    @include css-var(instagram-1, $instagram-1);\n    @include css-var(instagram-2, $instagram-2);\n    @include css-var(instagram-3, $instagram-3);\n    @include css-var(instagram-4, $instagram-4);\n    @include css-var(instagram-5, $instagram-5);\n    @include css-var(instagram-6, $instagram-6);\n\n    /// Application Colors\n    @include shades('black', $black, lighten);\n    @include shades('white', $white, darken);\n    @include shades(glow, $trans-light, darken, 7, 10%, true);\n    @include shades(shadow, $trans-dark, darken, 7, 10%, true);\n\n    @include shades(brand, $brand);\n    @include shades(accent, $accent);\n    @include shades(success, $success);\n    @include shades(danger, $danger);\n    @include shades(warning, $warning);\n    @include shades(info, $info);",
       "line": {
         "start": 11,
-        "end": 116
+        "end": 112
       }
     },
     "access": "public",
@@ -2731,7 +2724,7 @@
       "value": "@if ($theme-default == light) {\n        @include light-theme;\n    } @else {\n        @include dark-theme;\n    }",
       "line": {
         "start": 63,
-        "end": 116
+        "end": 112
       }
     },
     "access": "public",
@@ -2829,40 +2822,15 @@
     }
   },
   {
-    "description": "Structure\n",
-    "commentRange": {
-      "start": 47,
-      "end": 47
-    },
-    "context": {
-      "type": "variable",
-      "name": "nav-height",
-      "value": "4rem",
-      "scope": "default",
-      "line": {
-        "start": 48,
-        "end": 48
-      }
-    },
-    "access": "public",
-    "group": [
-      "undefined"
-    ],
-    "file": {
-      "path": "imports/util/_vars.scss",
-      "name": "_vars.scss"
-    }
-  },
-  {
-    "description": "Default theme\n",
+    "description": "Fonts\n",
     "commentRange": {
       "start": 50,
       "end": 50
     },
     "context": {
       "type": "variable",
-      "name": "theme-default",
-      "value": "light",
+      "name": "font-primary",
+      "value": "sans-serif",
       "scope": "default",
       "line": {
         "start": 51,
@@ -2879,10 +2847,85 @@
     }
   },
   {
+    "description": "Font Sizes\n",
+    "commentRange": {
+      "start": 56,
+      "end": 56
+    },
+    "context": {
+      "type": "variable",
+      "name": "font-size-mobile",
+      "value": "(\n    h1: 2.5rem,\n    h2: 2rem,\n    h3: 1.75rem,\n    h4: 1.5rem,\n    h5: 1.25rem,\n    h6: 1.125rem,\n    p: 1rem,\n)",
+      "scope": "default",
+      "line": {
+        "start": 57,
+        "end": 65
+      }
+    },
+    "access": "public",
+    "group": [
+      "undefined"
+    ],
+    "file": {
+      "path": "imports/util/_vars.scss",
+      "name": "_vars.scss"
+    }
+  },
+  {
+    "description": "Structure\n",
+    "commentRange": {
+      "start": 76,
+      "end": 76
+    },
+    "context": {
+      "type": "variable",
+      "name": "header-height",
+      "value": "4rem",
+      "scope": "default",
+      "line": {
+        "start": 77,
+        "end": 77
+      }
+    },
+    "access": "public",
+    "group": [
+      "undefined"
+    ],
+    "file": {
+      "path": "imports/util/_vars.scss",
+      "name": "_vars.scss"
+    }
+  },
+  {
+    "description": "Default theme\n",
+    "commentRange": {
+      "start": 79,
+      "end": 79
+    },
+    "context": {
+      "type": "variable",
+      "name": "theme-default",
+      "value": "light",
+      "scope": "default",
+      "line": {
+        "start": 80,
+        "end": 80
+      }
+    },
+    "access": "public",
+    "group": [
+      "undefined"
+    ],
+    "file": {
+      "path": "imports/util/_vars.scss",
+      "name": "_vars.scss"
+    }
+  },
+  {
     "description": "Outline width\n",
     "commentRange": {
-      "start": 53,
-      "end": 53
+      "start": 82,
+      "end": 82
     },
     "context": {
       "type": "variable",
@@ -2890,8 +2933,8 @@
       "value": "0.125rem",
       "scope": "default",
       "line": {
-        "start": 54,
-        "end": 54
+        "start": 83,
+        "end": 83
       }
     },
     "access": "public",
@@ -2915,7 +2958,7 @@
       "value": "Number",
       "line": {
         "start": 103,
-        "end": 747
+        "end": 759
       }
     },
     "author": [

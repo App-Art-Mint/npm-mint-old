@@ -7,42 +7,28 @@
 /// Imports
 @use '../util' as *;
 
-/// CSS variables
+/// CSS Variables
 :root {
-    @include css-var(delay-instant, delay(instant));
-    @include css-var(delay-fast, delay(fast));
-    @include css-var(delay-med-fast, delay(med-fast));
-    @include css-var(delay-default, delay(default));
-    @include css-var(delay-med-slow, delay(med-slow));
-    @include css-var(delay-slow, delay(slow));
+    @include css-var(header-height, $header-height);
+    @include css-var-ref(header-bg, $header-bg);
+    @include css-var-ref(header-fg, $header-fg);
 }
 
-/// Styles
-#{class(sr-only)} {
-    position: absolute !important;
-    width: 1px !important;
-    height: 1px !important;
-    padding: 0 !important;
-    margin: -1px !important;
-    overflow: hidden !important;
-    clip: rect(0, 0, 0, 0) !important;
-    border: 0 !important;
-}
-
+/// Header Styles
 #{id(header)} {
     display: flex;
     flex-direction: column;
     position: relative;
     width: 100%;
-    color: css-var(fg);
+    color: css-var(header-fg);
     background-color: css-var(header-bg);
     z-index: 1000;
 
     &#{class(js)} {
         align-items: center;
         flex-direction: row;
-        height: css-var(height);
-        padding: calc((css-var(height) - css-var(btn-height)) / 2);
+        height: css-var(header-height);
+        padding: calc(css-var(header-height) / 2);
 
         #{controls(wrapper)} {
             display: inline-block;
@@ -80,7 +66,7 @@
 
     &.mint-right {
         #{id(wrapper)} {
-            top: css-var(height);
+            top: css-var(header-height);
             right: -100%;
             left: unset;
 
@@ -103,7 +89,7 @@
 
     &.mint-left {
         #{id(wrapper)} {
-            top: css-var(height);
+            top: css-var(header-height);
             left: -100%;
 
             &#{class(open)} {
@@ -118,7 +104,7 @@
         top: 0;
         left: 0;
         width: 100%;
-        height: css-var(height);
+        height: css-var(header-height);
         background: css-var(header-bg);
         z-index: -1;
     }
@@ -140,16 +126,29 @@
     a, button {
         display: flex;
         align-items: center;
-        padding: calc((css-var(height) - css-var(btn-height)) / 2);
+        width: 100%;
+        margin: 0;
+        border: 0;
+        color: css-var(header-fg);
+        background: css-var(trans);
     }
     
+    h1 {
+        display: flex;
+        white-space: nowrap;
+        margin: 0;
+    }
+
+    #{class(logo)} {
+        text-decoration: none;
+        
+        img {
+            max-width: css-var(header-height);
+        }
+    }
+
     #{controls(wrapper)} {
         display: none;
-    }
-    
-    #{id(logo)} {
-        margin: calc((css-var(height) - css-var(btn-height)) / 2);
-        padding: 0;
     }
 
     #{id(wrapper)} {
@@ -159,12 +158,12 @@
         top: -100%;
         left: 0;
         width: 100%;
-        height: calc(100vh - css-var(height));
+        height: calc(100vh - css-var(header-height));
         transition: none;
         z-index: -2;
         
         &#{class(open)} {
-            top: css-var(height);
+            top: css-var(header-height);
         }
     }
 
@@ -172,7 +171,7 @@
         position: absolute;
         top: 0;
         right: 0;
-        height: css-var(height);
+        height: css-var(header-height);
     }
     
     #{class(dropdown)} {
@@ -182,13 +181,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            min-width: css-var(height);
-            height: css-var(height);
-            padding: calc((css-var(height) - css-var(btn-height)) / 2);
+            min-width: css-var(header-height);
+            height: css-var(header-height);
+            padding: calc(css-var(header-height) / 2);
         }
 
         li {
-            padding: calc((css-var(height) - css-var(btn-height)) / 2);
+            padding: calc(css-var(header-height) / 2);
             line-height: 1;
             cursor: pointer;
         }
