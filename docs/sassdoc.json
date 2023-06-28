@@ -2224,8 +2224,8 @@
     },
     "context": {
       "type": "variable",
-      "name": "border-radius",
-      "value": "1rem",
+      "name": "card-shadow",
+      "value": "$card-shadow-size #{css-var($card-shadow-color)}",
       "scope": "private",
       "line": {
         "start": 11,
@@ -2244,16 +2244,16 @@
   {
     "description": "Card Styles\n",
     "commentRange": {
-      "start": 16,
-      "end": 16
+      "start": 13,
+      "end": 13
     },
     "context": {
       "type": "css",
       "name": "#{class(card)}",
-      "value": "display: flex;\n    flex-direction: column;\n    margin: $padding * 2 0;\n    border-radius: $border-radius;\n    box-shadow: $box-shadow;\n    overflow: hidden;\n\n    @include break(sm) {\n        flex-direction: row;\n\n        &#{class(reverse)} {\n            flex-direction: row-reverse;\n        }\n    }\n\n    &#{class(stagger)} {\n        position: relative;\n\n        @include break(sm) {\n            flex-direction: row-reverse;\n            border-radius: 0;\n            box-shadow: none;\n            overflow: visible;\n\n            & > #{class(image)},\n            & > mint-image #{class(image)} {\n                position: absolute;\n                top: 0;\n                left: 0;\n                width: 50%;\n                height: calc(100% - 3rem);\n                border-radius: $border-radius;\n                box-shadow: $box-shadow;\n\n                img {\n                    height: 100%;\n                    object-fit: cover;\n                }\n            }\n\n            & > #{class(content)} {\n                width: calc(50% + $padding * 2);\n                margin-top: $padding * 2;\n                border-radius: $border-radius;\n                box-shadow: $box-shadow;\n            }\n        }\n\n        &#{class(reverse)} {\n            @include break(sm) {\n                flex-direction: row;\n\n                & > #{class(image)},\n                & > mint-image #{class(image)} {\n                    left: auto;\n                    right: 0;\n                }\n            }\n        }\n    }\n\n    & > #{class(image)}:only-child,\n    & > mint-image:only-child #{class(image)} {\n        width: 100%;\n    }\n\n    & > #{class(image)},\n    & > mint-image #{class(image)} {\n        overflow: hidden;\n\n        @include break(sm) {\n            width: 50%;\n        }\n    }\n\n    #{class(content)} {\n        padding: $padding;\n        background: css-var(black-2);\n\n        @include break(sm) {\n            width: 50%;\n        }\n\n        :first-child {\n            margin-top: 0;\n        }\n\n        :last-child {\n            margin-bottom: 0;\n        }\n\n        #{class(title)} {\n            display: flex;\n            align-items: center;\n            justify-content: flex-start;\n\n            & > #{class(image)},\n            & > mint-image {\n                width: 100%;\n                height: 100%;\n                max-width: $logo-size;\n                max-height: $logo-size;\n                margin-right: 1rem;\n                \n                img {\n                    display: block;\n                    width: 100%;\n                    height: 100%;\n                }\n            }\n\n            div {\n                width: 100%;\n\n                & > * {\n                    margin: 0;\n                }\n            }\n        }\n    }",
+      "value": "display: flex;\n    flex-direction: column;\n    height: 100%;\n    margin: 0;\n    border-radius: $card-radius;\n    box-shadow: $card-shadow;\n    overflow: hidden;\n\n    @include break(sm) {\n        flex-direction: row;\n\n        &#{class(reverse)} {\n            flex-direction: row-reverse;\n        }\n    }\n\n    &#{class(stagger)} {\n        position: relative;\n\n        @include break(sm) {\n            flex-direction: row-reverse;\n            border-radius: 0;\n            box-shadow: none;\n            overflow: visible;\n\n            & > #{class(image)},\n            & > mint-image #{class(image)} {\n                position: absolute;\n                top: 0;\n                left: 0;\n                width: 50%;\n                height: calc(100% - 3rem);\n                border-radius: $card-radius;\n                box-shadow: $card-shadow;\n\n                img {\n                    height: 100%;\n                    object-fit: cover;\n                }\n            }\n\n            & > #{class(content)} {\n                width: calc(50% + $card-padding * 2);\n                margin-top: $card-padding * 2;\n                border-radius: $card-radius;\n                box-shadow: $card-shadow;\n            }\n        }\n\n        &#{class(reverse)} {\n            @include break(sm) {\n                flex-direction: row;\n\n                & > #{class(image)},\n                & > mint-image #{class(image)} {\n                    left: auto;\n                    right: 0;\n                }\n            }\n        }\n    }\n\n    & > #{class(image)}:only-child,\n    & > mint-image:only-child #{class(image)} {\n        width: 100%;\n    }\n\n    & > #{class(image)},\n    & > mint-image #{class(image)} {\n        overflow: hidden;\n\n        @include break(sm) {\n            width: 50%;\n        }\n\n        & + #{class(content)} {\n            @include break(sm) {\n                width: 50%;\n            }\n        }\n    }\n\n    #{class(content)} {\n        padding: $card-padding;\n        background: css-var(black-2);\n        width: 100%;\n\n        :first-child {\n            margin-top: 0;\n        }\n\n        :last-child {\n            margin-bottom: 0;\n        }\n    }\n\n    #{class(title)} {\n        display: flex;\n        align-items: center;\n        justify-content: flex-start;\n        height: 100%;\n\n        & > #{class(image)},\n        & > mint-image {\n            width: 100%;\n            height: 100%;\n            max-width: $card-logo-size;\n            max-height: $card-logo-size;\n            margin-right: $card-padding;\n            \n            img {\n                display: block;\n                width: 100%;\n                height: 100%;\n            }\n        }\n\n        i {\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            min-width: $card-logo-size;\n            max-width: $card-logo-size;\n            margin-right: $card-padding;\n            font-size: calc($card-logo-size - 1rem);\n        }\n\n        & > div {\n            width: 100%;\n\n            & > * {\n                margin: 0;\n            }\n        }\n    }",
       "line": {
-        "start": 17,
-        "end": 139
+        "start": 14,
+        "end": 151
       }
     },
     "access": "public",
@@ -2263,6 +2263,30 @@
     "file": {
       "path": "imports/components/_cards.scss",
       "name": "_cards.scss"
+    }
+  },
+  {
+    "description": "Footer Styles\n",
+    "commentRange": {
+      "start": 7,
+      "end": 7
+    },
+    "context": {
+      "type": "css",
+      "name": "app-footer",
+      "value": "display: flex;\n    flex-direction: column;\n\n    &::before {\n        content: '';\n        display: flex;\n        flex-grow: 1;\n        height: 100%;\n        background: css-var(trans);\n    }",
+      "line": {
+        "start": 8,
+        "end": 20
+      }
+    },
+    "access": "public",
+    "group": [
+      "undefined"
+    ],
+    "file": {
+      "path": "imports/components/_footer.scss",
+      "name": "_footer.scss"
     }
   },
   {
@@ -2298,7 +2322,7 @@
     "context": {
       "type": "css",
       "name": "#{id(header)}",
-      "value": "display: flex;\n    flex-direction: column;\n    position: relative;\n    width: 100%;\n    color: css-var(header-fg);\n    background-color: css-var(header-bg);\n    z-index: 1000;\n\n    &#{class(js)} {\n        align-items: center;\n        flex-direction: row;\n        height: css-var(header-height);\n        padding: calc(css-var(header-height) / 2);\n\n        #{controls(wrapper)} {\n            display: inline-block;\n        }\n\n        #{$has-controls + neg(controls(wrapper))} {\n            & + ul {\n                display: flex;\n                flex-direction: column;\n                height: 0;\n                overflow: hidden;\n                transition: height css-var(delay-default), margin css-var(delay-default);\n            }\n            \n            &#{$has-expanded + neg(expanded(true))} {\n                & + ul {\n                    margin: 0;\n                }\n            }\n        }\n\n        &#{class(fixed)} {\n            position: fixed;\n            top: 0;\n            left: 0;\n        }\n        \n        #{id(wrapper)} {\n            background: css-var(bg);\n            transition-duration: css-var(delay-default);\n            transition-property: top, right, bottom, left;\n            overflow: auto;\n        }\n    }\n\n    &.mint-right {\n        #{id(wrapper)} {\n            top: css-var(header-height);\n            right: -100%;\n            left: unset;\n\n            &#{class(open)} {\n                right: 0;\n            }\n        }\n    }\n\n    &.mint-bottom {\n        #{id(wrapper)} {\n            top: unset;\n            bottom: -100%;\n\n            &#{class(open)} {\n                bottom: 0;\n            }\n        }\n    }\n\n    &.mint-left {\n        #{id(wrapper)} {\n            top: css-var(header-height);\n            left: -100%;\n\n            &#{class(open)} {\n                left: 0;\n            }\n        }\n    }\n\n    &::before {\n        content: '';\n        position: absolute;\n        top: 0;\n        left: 0;\n        width: 100%;\n        height: css-var(header-height);\n        background: css-var(header-bg);\n        z-index: -1;\n    }\n    \n    nav {\n        & > ul {\n            display: flex;\n            flex-direction: column;\n        }\n    }\n    \n    ul {\n        list-style: none;\n        margin-top: 0;\n        margin-bottom: 1rem;\n        padding-left: 0;\n    }\n    \n    a, button {\n        display: flex;\n        align-items: center;\n        width: 100%;\n        margin: 0;\n        border: 0;\n        color: css-var(header-fg);\n        background: css-var(trans);\n    }\n    \n    h1 {\n        display: flex;\n        white-space: nowrap;\n        margin: 0;\n    }\n\n    #{class(logo)} {\n        text-decoration: none;\n        \n        img {\n            max-width: css-var(header-height);\n        }\n    }\n\n    #{controls(wrapper)} {\n        display: none;\n    }\n\n    #{id(wrapper)} {\n        display: flex;\n        flex-direction: column;\n        position: fixed;\n        top: -100%;\n        left: 0;\n        width: 100%;\n        height: calc(100vh - css-var(header-height));\n        transition: none;\n        z-index: -2;\n        \n        &#{class(open)} {\n            top: css-var(header-height);\n        }\n    }\n\n    #{id(widgets)} {\n        position: absolute;\n        top: 0;\n        right: 0;\n        height: css-var(header-height);\n    }\n    \n    #{class(dropdown)} {\n        background: css-var(header-bg);\n\n        button {\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            min-width: css-var(header-height);\n            height: css-var(header-height);\n            padding: calc(css-var(header-height) / 2);\n        }\n\n        li {\n            padding: calc(css-var(header-height) / 2);\n            line-height: 1;\n            cursor: pointer;\n        }\n    }",
+      "value": "display: flex;\n    flex-direction: column;\n    position: relative;\n    width: 100%;\n    color: css-var(header-fg);\n    background-color: css-var(header-bg);\n    z-index: 10000;\n\n    &#{class(js)} {\n        align-items: center;\n        flex-direction: row;\n        height: css-var(header-height);\n        padding: calc(css-var(header-height) / 2);\n\n        #{controls(wrapper)} {\n            display: inline-block;\n        }\n\n        #{$has-controls + neg(controls(wrapper))} {\n            & + ul {\n                display: flex;\n                flex-direction: column;\n                height: 0;\n                overflow: hidden;\n                transition: height css-var(delay-default), margin css-var(delay-default);\n            }\n            \n            &#{$has-expanded + neg(expanded(true))} {\n                & + ul {\n                    margin: 0;\n                }\n            }\n        }\n\n        &#{class(fixed)} {\n            position: fixed;\n            top: 0;\n            left: 0;\n        }\n        \n        #{id(wrapper)} {\n            background: css-var(bg);\n            transition-duration: css-var(delay-default);\n            transition-property: top, right, bottom, left;\n            overflow: auto;\n        }\n    }\n\n    &.mint-right {\n        #{id(wrapper)} {\n            top: css-var(header-height);\n            right: -100%;\n            left: unset;\n\n            &#{class(open)} {\n                right: 0;\n            }\n        }\n    }\n\n    &.mint-bottom {\n        #{id(wrapper)} {\n            top: unset;\n            bottom: -100%;\n\n            &#{class(open)} {\n                bottom: 0;\n            }\n        }\n    }\n\n    &.mint-left {\n        #{id(wrapper)} {\n            top: css-var(header-height);\n            left: -100%;\n\n            &#{class(open)} {\n                left: 0;\n            }\n        }\n    }\n\n    &::before {\n        content: '';\n        position: absolute;\n        top: 0;\n        left: 0;\n        width: 100%;\n        height: css-var(header-height);\n        background: css-var(header-bg);\n        z-index: -1;\n    }\n    \n    nav {\n        & > ul {\n            display: flex;\n            flex-direction: column;\n        }\n    }\n    \n    ul {\n        list-style: none;\n        margin-top: 0;\n        margin-bottom: 1rem;\n        padding-left: 0;\n    }\n    \n    a, button {\n        display: flex;\n        align-items: center;\n        width: 100%;\n        margin: 0;\n        border: 0;\n        color: css-var(header-fg);\n        background: css-var(trans);\n    }\n    \n    h1 {\n        display: flex;\n        white-space: nowrap;\n        margin: 0;\n    }\n\n    #{class(logo)} {\n        text-decoration: none;\n        \n        img {\n            max-width: css-var(header-height);\n        }\n    }\n\n    #{controls(wrapper)} {\n        display: none;\n    }\n\n    #{id(wrapper)} {\n        display: flex;\n        flex-direction: column;\n        position: fixed;\n        top: -100%;\n        left: 0;\n        width: 100%;\n        height: calc(100vh - css-var(header-height));\n        transition: none;\n        z-index: -2;\n        \n        &#{class(open)} {\n            top: css-var(header-height);\n        }\n    }\n\n    #{id(widgets)} {\n        position: absolute;\n        top: 0;\n        right: 0;\n        height: css-var(header-height);\n    }\n    \n    #{class(dropdown)} {\n        background: css-var(header-bg);\n\n        button {\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            min-width: css-var(header-height);\n            height: css-var(header-height);\n            padding: calc(css-var(header-height) / 2);\n        }\n\n        li {\n            padding: calc(css-var(header-height) / 2);\n            line-height: 1;\n            cursor: pointer;\n        }\n    }",
       "line": {
         "start": 18,
         "end": 196
@@ -2560,7 +2584,7 @@
       "value": "&, &::before, &::after {\n        box-sizing: border-box;\n    }",
       "line": {
         "start": 5,
-        "end": 89
+        "end": 108
       }
     },
     "access": "public",
@@ -2584,7 +2608,7 @@
       "value": "@include break-util(padding, 1rem, 0);",
       "line": {
         "start": 5,
-        "end": 85
+        "end": 122
       }
     },
     "access": "public",
@@ -2899,8 +2923,8 @@
   {
     "description": "Default theme\n",
     "commentRange": {
-      "start": 79,
-      "end": 79
+      "start": 80,
+      "end": 80
     },
     "context": {
       "type": "variable",
@@ -2908,8 +2932,8 @@
       "value": "light",
       "scope": "default",
       "line": {
-        "start": 80,
-        "end": 80
+        "start": 81,
+        "end": 81
       }
     },
     "access": "public",
@@ -2924,8 +2948,8 @@
   {
     "description": "Outline width\n",
     "commentRange": {
-      "start": 82,
-      "end": 82
+      "start": 83,
+      "end": 83
     },
     "context": {
       "type": "variable",
@@ -2933,8 +2957,33 @@
       "value": "0.125rem",
       "scope": "default",
       "line": {
-        "start": 83,
-        "end": 83
+        "start": 84,
+        "end": 84
+      }
+    },
+    "access": "public",
+    "group": [
+      "undefined"
+    ],
+    "file": {
+      "path": "imports/util/_vars.scss",
+      "name": "_vars.scss"
+    }
+  },
+  {
+    "description": "Cards\n",
+    "commentRange": {
+      "start": 87,
+      "end": 87
+    },
+    "context": {
+      "type": "variable",
+      "name": "card-padding",
+      "value": "1.5rem",
+      "scope": "default",
+      "line": {
+        "start": 88,
+        "end": 88
       }
     },
     "access": "public",

@@ -75,6 +75,7 @@ $font-size-desktop: (
 
 /// Structure
 $header-height: 4rem !default;
+$grid-gap: 2rem !default;
 
 /// Default theme
 $theme-default: light !default;
@@ -82,3 +83,10 @@ $theme-default: light !default;
 /// Outline width
 $outline-width: 0.125rem !default;
 $border-radius: 0.25rem !default;
+
+/// Cards
+$card-padding: 1.5rem !default;
+$card-radius: 1rem !default;
+$card-shadow-color: glow-2 !default;
+$card-shadow-size: 0 0 2rem -0.5rem !default;
+$card-logo-size: 4rem !default;

@@ -12,10 +12,6 @@ html, body {
     color: css-var(fore);
     background-color: css-var(back);
     overflow-x: hidden;
-}
-
-html, body, main {
-    width: 100%;
     min-height: 100vh;
     margin: 0;
     padding: 0;
@@ -25,7 +21,24 @@ main {
     display: flex;
     flex-direction: column;
     position: relative;
+    width: 100%;
+    min-height: calc(100vh - css-var(header-height));
     z-index: 1000;
+    
+    & > router-outlet {
+        & + * {
+            width: 100%;
+            flex-grow: 1;
+        }
+    }
+
+    router-outlet {
+        flex-grow: 0;
+    }
+}
+
+app-root {
+    display: block;
 }
 
 nav {
@@ -85,4 +98,10 @@ img {
     overflow: hidden !important;
     clip: rect(0, 0, 0, 0) !important;
     border: 0 !important;
+}
+
+#{class(list)} {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }

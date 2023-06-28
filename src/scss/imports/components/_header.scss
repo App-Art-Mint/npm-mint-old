@@ -22,7 +22,7 @@
     width: 100%;
     color: css-var(header-fg);
     background-color: css-var(header-bg);
-    z-index: 1000;
+    z-index: 10000;
 
     &#{class(js)} {
         align-items: center;

@@ -8,18 +8,16 @@
 @use '../util' as *;
 
 /// Variables
-$border-radius: 1rem;
-$padding: 1.5rem;
-$box-shadow: 0 0 2rem -0.5rem #{css-var(glow-2)};
-$logo-size: 4rem;
+$card-shadow: $card-shadow-size #{css-var($card-shadow-color)};
 
 /// Card Styles
 #{class(card)} {
     display: flex;
     flex-direction: column;
-    margin: $padding * 2 0;
-    border-radius: $border-radius;
-    box-shadow: $box-shadow;
+    height: 100%;
+    margin: 0;
+    border-radius: $card-radius;
+    box-shadow: $card-shadow;
     overflow: hidden;
 
     @include break(sm) {
@@ -46,8 +44,8 @@ $logo-size: 4rem;
                 left: 0;
                 width: 50%;
                 height: calc(100% - 3rem);
-                border-radius: $border-radius;
-                box-shadow: $box-shadow;
+                border-radius: $card-radius;
+                box-shadow: $card-shadow;
 
                 img {
                     height: 100%;
@@ -56,10 +54,10 @@ $logo-size: 4rem;
             }
 
             & > #{class(content)} {
-                width: calc(50% + $padding * 2);
-                margin-top: $padding * 2;
-                border-radius: $border-radius;
-                box-shadow: $box-shadow;
+                width: calc(50% + $card-padding * 2);
+                margin-top: $card-padding * 2;
+                border-radius: $card-radius;
+                box-shadow: $card-shadow;
             }
         }
 
@@ -88,15 +86,18 @@ $logo-size: 4rem;
         @include break(sm) {
             width: 50%;
         }
+
+        & + #{class(content)} {
+            @include break(sm) {
+                width: 50%;
+            }
+        }
     }
 
     #{class(content)} {
-        padding: $padding;
+        padding: $card-padding;
         background: css-var(black-2);
-
-        @include break(sm) {
-            width: 50%;
-        }
+        width: 100%;
 
         :first-child {
             margin-top: 0;
@@ -105,33 +106,44 @@ $logo-size: 4rem;
         :last-child {
             margin-bottom: 0;
         }
+    }
 
-        #{class(title)} {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
+    #{class(title)} {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        height: 100%;
 
-            & > #{class(image)},
-            & > mint-image {
+        & > #{class(image)},
+        & > mint-image {
+            width: 100%;
+            height: 100%;
+            max-width: $card-logo-size;
+            max-height: $card-logo-size;
+            margin-right: $card-padding;
+            
+            img {
+                display: block;
                 width: 100%;
                 height: 100%;
-                max-width: $logo-size;
-                max-height: $logo-size;
-                margin-right: 1rem;
-                
-                img {
-                    display: block;
-                    width: 100%;
-                    height: 100%;
-                }
             }
+        }
 
-            div {
-                width: 100%;
+        i {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: $card-logo-size;
+            max-width: $card-logo-size;
+            margin-right: $card-padding;
+            font-size: calc($card-logo-size - 1rem);
+        }
 
-                & > * {
-                    margin: 0;
-                }
+        & > div {
+            width: 100%;
+
+            & > * {
+                margin: 0;
             }
         }
     }

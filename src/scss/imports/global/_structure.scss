@@ -82,3 +82,40 @@ section {
     justify-content: center;
     text-align: center;
 }
+
+#{class(grid)} {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $grid-gap;
+    margin: $grid-gap 0;
+
+    &#{class('2')} {
+        @include break(sm) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &#{class('3')} {
+        @include break(sm) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include break(lg) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    &#{class('4')} {
+        @include break(sm) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include break(lg) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @include break(xl) {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+}

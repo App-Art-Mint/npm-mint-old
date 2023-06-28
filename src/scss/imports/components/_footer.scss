@@ -1,0 +1,19 @@
+/// _footer.scss - Header styles
+/// @author App/Art Mint
+/// 
+/// @group Components
+@charset 'utf-8';
+
+/// Footer Styles
+app-footer {
+    display: flex;
+    flex-direction: column;
+
+    &::before {
+        content: '';
+        display: flex;
+        flex-grow: 1;
+        height: 100%;
+        background: css-var(trans);
+    }
+}
