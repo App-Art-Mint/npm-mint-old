@@ -5,11 +5,11 @@ export class mintItem {
     /**
      * Item settings
      */
-    version: number = 0;
-    priority: number = 0;
-    centered: boolean = false;
-    disabled: boolean = false;
-    private: boolean = false;
+    version?: number = 0;
+    priority?: number = 0;
+    centered?: boolean = false;
+    disabled?: boolean = false;
+    private?: boolean = false;
     
     /**
      * Item properties
@@ -39,7 +39,7 @@ export class mintItem {
      */
     attr?: {[key: string]: string} = {};
     params?: {[key: string]: string} = {};
-    options: {[key: string]: string} = {};
+    options?: {[key: string]: string} = {};
 
     /**
      * Item lists
