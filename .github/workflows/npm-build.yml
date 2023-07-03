@@ -1,4 +1,4 @@
-name: NodeJS with Webpack
+name: npm-build
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [ "prod", "dev" ]
 
 jobs:
-  build:
+  npm-build:
     runs-on: ubuntu-latest
 
     strategy:
