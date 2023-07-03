@@ -47,7 +47,7 @@
     "upgrade:config": "npm up -D @appartmint/config && mint-config",
     "prepare": "npm-run-all clean build build:**",
     "preversion": "npm i && npm run test",
-    "version": "git add -A",
+    "version": "npm publish && git add -A",
     "postversion": "git push && git push --tags && npm run endversion --if-present",
     "clean": "rimraf $npm_package_config_dirs_dist $npm_package_config_dirs_doc",
     "clear": "npm run clean",
