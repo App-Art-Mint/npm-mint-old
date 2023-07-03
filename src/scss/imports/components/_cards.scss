@@ -95,6 +95,8 @@ $card-shadow: $card-shadow-size #{css-var($card-shadow-color)};
     }
 
     #{class(content)} {
+        display: grid;
+        gap: $grid-gap / 2;
         padding: $card-padding;
         background: css-var(black-2);
         width: 100%;

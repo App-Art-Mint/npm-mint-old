@@ -10,42 +10,54 @@
 /// Variables
 $break-1: xs;
 
-/// A pill button
+/// All buttons
+#{class(btn)},
 #{class(pill)} {
     display: inline-block;
-    align-items: center;
-    min-width: 5rem;
-    padding: 0 0.75rem;
-    border-radius: 1rem;
-    color: css-var(fore);
-    background: css-var(brand-5);
-    line-height: 2;
+    border-radius: $pill-radius;
+    color: css-var($btn-fore);
+    background: css-var($btn-back);
+    border: $border-width solid css-var($btn-border);
     text-align: center;
     text-decoration: none;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    transition: color css-var(delay-default),
+                background-color css-var(delay-default),
+                border-color css-var(delay-default);
 
     @include break($break-1) {
         width: auto;
     }
 
     @include states(hover, focus, active) {
-        color: css-var(back);
-        background: css-var(brand-3);
-        outline-color: css-var(brand-0);
+        color: css-var($btn-fore-hover);
+        background: css-var($btn-border);
     }
 
     &#{class(alt)} {
-        color: css-var(brand-3);
-        background: css-var(trans);
+        color: css-var($btn-border);
+        background: css-var($btn-back-alt);
 
         @include states(hover, focus, active) {
-            color: css-var(fore);
-            background: css-var(trans);
-            outline-color: css-var(accent-2);
+            color: css-var($btn-fore);
+            background: css-var($btn-back-alt-hover);
+            border-color: css-var($btn-back-alt-hover);
         }
     }
+}
+
+/// Default buttons
+#{class(btn)} {
+    padding: $btn-padding-v $btn-padding-h + $btn-padding-adjust;
+}
+
+/// A pill button
+#{class(pill)} {
+    min-width: 5rem;
+    padding: 0 $btn-padding-adjust;
+    line-height: 2;
 }
 
 /// A list of buttons
@@ -55,6 +67,10 @@ $break-1: xs;
     & > * {
         width: 100%;
         margin: 0.5rem 0;
+
+        #{class(btn)}, #{class(pill)} {
+            display: block;
+        }
 
         @include break($break-1) {
             width: auto;

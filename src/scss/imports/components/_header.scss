@@ -5,6 +5,7 @@
 @charset 'utf-8';
 
 /// Imports
+@use 'sass:math';
 @use '../util' as *;
 
 /// CSS Variables
@@ -28,7 +29,7 @@
         align-items: center;
         flex-direction: row;
         height: css-var(header-height);
-        padding: calc(css-var(header-height) / 2);
+        padding: 0 calc(css-var(header-height) / 2);
 
         #{controls(wrapper)} {
             display: inline-block;
@@ -149,6 +150,52 @@
 
     #{controls(wrapper)} {
         display: none;
+        position: relative;
+        padding: $menu-btn-padding;
+        width: $menu-bar-width + $menu-btn-padding * 2;
+        height: $menu-btn-height + $menu-btn-padding * 2;
+        margin-left: auto;
+        border-radius: $border-radius;
+        background: css-var($menu-btn-color);
+        box-shadow: $menu-btn-shadow-size css-var($menu-btn-shadow-color);
+
+        #{class(menu-icon)} {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            &, &::before, &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                left: 50%;
+                height: $menu-bar-height;
+                width: $menu-bar-width;
+                background-color: css-var($menu-bar-color);
+                transition: delay(default);
+            }
+
+            &::before {
+                transform: translate(-50%, -200%);
+            }
+
+            &::after {
+                transform: translate(-50%, 200%);
+            }
+        }
+
+        &#{expanded(true)} {
+            #{class(menu-icon)} {
+                background: transparent;
+                &::before {
+                    transform: translate(-50%, 0) rotate(45deg);
+                }
+
+                &::after {
+                    transform: translate(-50%, 0) rotate(-45deg);
+                }
+            }
+        }
     }
 
     #{id(wrapper)} {

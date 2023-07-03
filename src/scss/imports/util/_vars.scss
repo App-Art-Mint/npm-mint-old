@@ -74,19 +74,48 @@ $font-size-desktop: (
 ) !default;
 
 /// Structure
-$header-height: 4rem !default;
 $grid-gap: 2rem !default;
 
 /// Default theme
 $theme-default: light !default;
 
 /// Outline width
-$outline-width: 0.125rem !default;
-$border-radius: 0.25rem !default;
+$border-width: 0.125rem !default;
+$border-radius: 1rem !default;
+
+/// Header
+$header-height: 4rem !default;
+
+/// Default Shadows
+$shadow-color: glow-2 !default;
+$shadow-size: 0 0 2rem -0.5rem !default;
+
+/// Buttons
+$menu-bar-height: 0.4rem !default;
+$menu-bar-width: $menu-bar-height * 8 !default;
+$menu-btn-height: $menu-bar-height * 8 !default;
+$menu-btn-padding: $menu-bar-height * 1.5 !default;
+$menu-bar-color: fore !default;
+$menu-btn-color: shadow-6 !default;
+$menu-btn-shadow-color: $shadow-color !default;
+$menu-btn-shadow-size: $shadow-size !default;
+
+$btn-radius: $border-radius !default;
+$btn-fore: fore !default;
+$btn-fore-hover: back !default;
+$btn-back: brand-5 !default;
+$btn-back-alt: trans !default;
+$btn-back-alt-hover: accent-2 !default;
+$btn-border: brand-3 !default;
+$btn-padding-v: 0.5rem !default;
+$btn-padding-h: 1rem !default;
+$btn-padding-adjust: 0.75rem !default;
+
+$pill-radius: $border-radius !default;
 
 /// Cards
 $card-padding: 1.5rem !default;
-$card-radius: 1rem !default;
-$card-shadow-color: glow-2 !default;
-$card-shadow-size: 0 0 2rem -0.5rem !default;
+$card-radius: $border-radius !default;
+$card-shadow-color: $shadow-color !default;
+$card-shadow-size: $shadow-size !default;
 $card-logo-size: 4rem !default;
