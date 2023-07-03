@@ -1,9 +1,9 @@
 {
   "name": "@appartmint/mint",
-  "author": "App/Art Mint",
+  "author": "App Art Mint LLC",
   "version": "0.10.1",
   "license": "MIT",
-  "description": "The front-end TS/SCSS framework of App/Art Mint",
+  "description": "The front-end TS/SCSS framework of App Art Mint",
   "keywords": [
     "appartmint",
     "app-art-mint",
@@ -44,10 +44,10 @@
     "webpack": "node_modules/@appartmint/config/dist/js/webpack.config.min.js"
   },
   "scripts": {
-    "upgrade": "npm up -D @appartmint/config && mint-config",
+    "upgrade:config": "npm up -D @appartmint/config && mint-config",
     "prepare": "npm-run-all clean build build:**",
     "preversion": "npm i && npm run test",
-    "version": "npm publish && git add -A",
+    "version": "git add -A",
     "postversion": "git push && git push --tags && npm run endversion --if-present",
     "clean": "rimraf $npm_package_config_dirs_dist $npm_package_config_dirs_doc",
     "clear": "npm run clean",
@@ -61,8 +61,6 @@
     "build:sassdoc": "sassdoc $npm_package_config_dirs_src/$npm_package_config_dirs_scss -p > $npm_package_config_dirs_doc/sassdoc.json",
     "serve": "webpack serve --config $npm_package_config_webpack",
     "watch": "npm run build -- --watch",
-    "watch:prod": "cross-env NODE_ENV=production npm run watch",
-    "watch:tsdoc": "npm run build:tsdoc -- --watch",
     "test": "echo '\nRun tests here!\n'"
   },
   "devDependencies": {
