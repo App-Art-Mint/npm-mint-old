@@ -10,39 +10,6 @@
 @use 'sass:list';
 @use '../util' as *;
 
-/// Variables
-$animations: (());
-$transitions: (());
-
-/// Mixins
-/// Register an animation
-@mixin animation($animation) {
-    $animations: map-merge($animations, (&: map-merge(map.get($animations, &), $animation)));
-    $this: map.get($animations, &);
-    $animation: '';
-
-    & {
-        @each $item in $this {
-            @if (list.index($this, $item) != 1) {
-                $animation: #{$animation},;
-            }
-            $animation: #{$animation}#{$item};
-        }
-        animation: $animation;
-
-        @each $name, $items in $animations {
-            &#{class($name)} {
-                animation: $animation;
-            }
-        }
-    }
-}
-
-/// Register a transition
-@mixin transition($transition) {
-    $transitions: map-merge($transitions, ($name: $transition));
-}
-
 /// Animations
 /// Cycle through instagram colors
 @keyframes instafade {

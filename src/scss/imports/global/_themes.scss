@@ -1,6 +1,6 @@
 /// themes.scss - Styles for light and dark themes
 /// @author App/Art Mint
-/// 
+///
 /// @group Themes
 @charset 'utf-8';
 
@@ -15,9 +15,12 @@
     @include css-var(ethereum, $ethereum);
     @include css-var(venmo, $venmo);
     @include css-var(facebook, $facebook);
+	@include css-var(twitter, $twitter);
     @include css-var(youtube, $youtube);
-    @include css-var(itunes, $itunes);
+    @include css-var(apple, $apple);
     @include css-var(spotify, $spotify);
+	@include css-var(soundcloud, $soundcloud);
+	@include css-var(bandcamp, $bandcamp);
     @include css-var(amazon-0, $amazon-0);
     @include css-var(amazon-1, $amazon-1);
     @include css-var(napster-0, $napster-0);
@@ -81,19 +84,63 @@
 a {
     color: css-var(brand);
 
+	.fa-instagram {
+		position: relative;
+
+		&::after {
+			content: '\f16d';
+			position: absolute;
+			top: 0;
+			left: 0;
+			opacity: 0;
+			transition: opacity css-var(delay-default);
+
+			@include background-clip(css-var(instagram-0)) {
+				/// https://codepen.io/thomasrye/pen/VaRoYv
+				background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+			}
+		}
+	}
+
     @include states(hover, focus, active) {
         color: css-var(accent-0);
-        
-        .fa-github {
-            color: css-var(white-1);
-        }
 
-        .fa-youtube {
+		.fa-facebook, .fa-square-facebook {
+			color: css-var(facebook);
+		}
+
+        .fa-instagram {
+			&::after {
+				opacity: 1;
+			}
+		}
+
+		.fa-twitter {
+			color: css-var(twitter);
+		}
+
+		.fa-youtube {
             color: css-var(youtube);
         }
 
-        .fa-instagram {
-            color: css-var(instagram-0)
+		.fa-spotify {
+			color: css-var(spotify);
+		}
+
+		.fa-apple {
+			color: css-var(apple);
+		}
+
+		.fa-soundcloud {
+			color: css-var(soundcloud);
+		}
+
+		.fa-bandcamp {
+			color: css-var(bandcamp);
+		}
+
+		.fa-github {
+            color: css-var(white-1);
         }
 
         .fa-bitcoin {

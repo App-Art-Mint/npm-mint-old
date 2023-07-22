@@ -1,6 +1,6 @@
 /// vars.scss - Global variables
 /// @author App/Art Mint
-/// 
+///
 /// @group Vars
 @charset 'utf-8';
 
@@ -9,9 +9,12 @@ $bitcoin: #FF9900;
 $ethereum: #3C3C3D;
 $venmo: #008CFF;
 $facebook: #3b5998;
+$twitter: #1da1f2;
 $youtube: #F00;
-$itunes: #DDD;
+$apple: #DDD;
 $spotify: #84bd00;
+$soundcloud: #f26f23;
+$bandcamp: #629aa9;
 $amazon-0: #F90;
 $amazon-1: #146eb4;
 $napster-0: #2ca6de;
@@ -89,6 +92,9 @@ $header-height: 4rem !default;
 /// Default Shadows
 $shadow-color: glow-2 !default;
 $shadow-size: 0 0 2rem -0.5rem !default;
+
+/// Images
+$image-shadow-size: 0.5rem !default;
 
 /// Buttons
 $menu-bar-height: 0.4rem !default;
