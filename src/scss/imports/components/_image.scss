@@ -7,10 +7,6 @@
 /// Imports
 @use '../util' as *;
 
-/// Variables
-$shadow-color: rgba(0, 0, 0, 0.4);
-$shadow-size: 0.5rem;
-
 /// Image styles
 #{class(image)} {
     &#{class(error)} {
@@ -20,9 +16,9 @@ $shadow-size: 0.5rem;
             bottom: 0;
             left: 0;
             width: 100%;
-            padding: 0 $shadow-size $shadow-size $shadow-size;
-            background: $shadow-color;
-            box-shadow: 0 0 $shadow-size $shadow-size $shadow-color;
+            padding: 0 $image-shadow-size $image-shadow-size $image-shadow-size;
+            background: css-var($shadow-color);
+            box-shadow: 0 0 $image-shadow-size $image-shadow-size css-var($shadow-color);
             text-align: center;
         }
     }

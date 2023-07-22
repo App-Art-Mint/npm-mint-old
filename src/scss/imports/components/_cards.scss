@@ -1,152 +1,153 @@
 /// cards.scss - Card styles
 /// @author App Art Mint LLC
-/// 
+///
 /// @group Cards
 @charset 'utf-8';
 
 /// Imports
 @use '../util' as *;
 
-/// Variables
-$card-shadow: $card-shadow-size #{css-var($card-shadow-color)};
-
 /// Card Styles
 #{class(card)} {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    margin: 0;
-    border-radius: $card-radius;
-    box-shadow: $card-shadow;
-    overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	margin: 0;
+	border-radius: $card-radius;
+	box-shadow: $card-shadow-size #{css-var($card-shadow-color)};
+	overflow: hidden;
 
-    @include break(sm) {
-        flex-direction: row;
+	@include break(sm) {
+		flex-direction: row;
 
-        &#{class(reverse)} {
-            flex-direction: row-reverse;
-        }
-    }
+		&#{class(reverse)} {
+			flex-direction: row-reverse;
+		}
+	}
 
-    &#{class(stagger)} {
-        position: relative;
+	&#{class(stagger)} {
+		position: relative;
 
-        @include break(sm) {
-            flex-direction: row-reverse;
-            border-radius: 0;
-            box-shadow: none;
-            overflow: visible;
+		@include break(sm) {
+			flex-direction: row-reverse;
+			border-radius: 0;
+			box-shadow: none;
+			overflow: visible;
 
-            & > #{class(image)},
-            & > mint-image #{class(image)} {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 50%;
-                height: calc(100% - 3rem);
-                border-radius: $card-radius;
-                box-shadow: $card-shadow;
+			&>#{class(image)},
+			&>mint-image #{class(image)} {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 50%;
+				height: calc(100% - 3rem);
+				border-radius: $card-radius;
+				box-shadow: $card-shadow-size #{css-var($card-shadow-color)};
 
-                img {
-                    height: 100%;
-                    object-fit: cover;
-                }
-            }
+				img {
+					height: 100%;
+					object-fit: cover;
+				}
+			}
 
-            & > #{class(content)} {
-                width: calc(50% + $card-padding * 2);
-                margin-top: $card-padding * 2;
-                border-radius: $card-radius;
-                box-shadow: $card-shadow;
-            }
-        }
+			&>#{class(content)} {
+				width: calc(50% + $card-padding * 2);
+				margin-top: $card-padding * 2;
+				border-radius: $card-radius;
+				box-shadow: $card-shadow-size #{css-var($card-shadow-color)};
+			}
+		}
 
-        &#{class(reverse)} {
-            @include break(sm) {
-                flex-direction: row;
+		&#{class(reverse)} {
+			@include break(sm) {
+				flex-direction: row;
 
-                & > #{class(image)},
-                & > mint-image #{class(image)} {
-                    left: auto;
-                    right: 0;
-                }
-            }
-        }
-    }
+				&>#{class(image)},
+				&>mint-image #{class(image)} {
+					left: auto;
+					right: 0;
+				}
+			}
+		}
+	}
 
-    & > #{class(image)}:only-child,
-    & > mint-image:only-child #{class(image)} {
-        width: 100%;
-    }
+	&>#{class(image)}:only-child,
+	&>mint-image:only-child #{class(image)} {
+		width: 100%;
+	}
 
-    & > #{class(image)},
-    & > mint-image #{class(image)} {
-        overflow: hidden;
+	&>#{class(image)},
+	&>mint-image #{class(image)} {
+		overflow: hidden;
 
-        @include break(sm) {
-            width: 50%;
-        }
+		@include break(sm) {
+			width: 50%;
+		}
 
-        & + #{class(content)} {
-            @include break(sm) {
-                width: 50%;
-            }
-        }
-    }
+		&+#{class(content)} {
+			@include break(sm) {
+				width: 50%;
+			}
+		}
+	}
 
-    #{class(content)} {
-        display: grid;
-        gap: $grid-gap / 2;
-        padding: $card-padding;
-        background: css-var(black-2);
-        width: 100%;
+	#{class(content)} {
+		display: grid;
+		gap: $grid-gap / 2;
+		padding: $card-padding;
+		background: css-var(black-2);
+		width: 100%;
 
-        & > :first-child {
-            margin-top: 0;
-        }
+		&> :first-child {
+			margin-top: 0;
+		}
 
-        & > :last-child {
-            margin-bottom: 0;
-        }
-    }
+		&> :last-child {
+			margin-bottom: 0;
+		}
+	}
 
-    #{class(title)} {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        height: 100%;
+	#{class(title)} {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		height: fit-content;
 
-        & > #{class(image)},
-        & > mint-image {
-            width: 100%;
-            height: 100%;
-            max-width: $card-logo-size;
-            max-height: $card-logo-size;
-            margin-right: $card-padding;
-            
-            img {
-                display: block;
-                width: 100%;
-                height: 100%;
-            }
-        }
+		&:only-child {
+			height: 100%;
+		}
 
-        i {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-width: $card-logo-size;
-            max-width: $card-logo-size;
-            margin-right: $card-padding;
-            font-size: calc($card-logo-size - 1rem);
-        }
+		&>#{class(image)},
+		&>mint-image {
+			width: 100%;
+			height: 100%;
+			max-width: $card-logo-size;
+			max-height: $card-logo-size;
+			margin-right: $card-padding;
 
-        & > div {
-            width: 100%;
+			img {
+				display: block;
+				width: 100%;
+				height: 100%;
+			}
+		}
 
-            & > * {
-                margin: 0;
-            }
-        }
-    }
+		i {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			min-width: $card-logo-size;
+			max-width: $card-logo-size;
+			margin-right: $card-padding;
+			font-size: calc($card-logo-size - 1rem);
+		}
+
+		&>div {
+			width: 100%;
+
+			&>* {
+				margin: 0;
+			}
+		}
+	}
 }

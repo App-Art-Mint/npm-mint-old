@@ -1,16 +1,26 @@
 /// buttons.scss - Button styles
 /// @author App Art Mint LLC
-/// 
+///
 /// @group Buttons
 @charset 'utf-8';
 
 /// Imports
 @use '../util' as *;
 
-/// Variables
-$break-1: xs;
-
 /// All buttons
+#{class(btn)},
+#{class(pill)},
+#{class(btn-icon)} {
+	text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: color css-var(delay-default),
+                background-color css-var(delay-default),
+                border-color css-var(delay-default);
+}
+
+/// Regular buttons
 #{class(btn)},
 #{class(pill)} {
     display: inline-block;
@@ -19,15 +29,8 @@ $break-1: xs;
     background: css-var($btn-back);
     border: $border-width solid css-var($btn-border);
     text-align: center;
-    text-decoration: none;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    transition: color css-var(delay-default),
-                background-color css-var(delay-default),
-                border-color css-var(delay-default);
 
-    @include break($break-1) {
+    @include break(xs) {
         width: auto;
     }
 
@@ -51,9 +54,34 @@ $break-1: xs;
 /// Default buttons
 #{class(btn)} {
     padding: $btn-padding-v $btn-padding-h + $btn-padding-adjust;
+
+	&-icon {
+		display: block;
+		text-align: center;
+
+		@include states(hover, focus, active) {
+			i {
+				color: css-var($btn-back-alt-hover);
+			}
+		}
+
+		@include break(xs) {
+			display: inline-block;
+		}
+
+		i {
+			margin: 0 !important;
+			color: css-var($btn-border);
+			font-size: 4rem;
+
+			&::before {
+				transition: color css-var(delay-default);
+			}
+		}
+	}
 }
 
-/// A pill button
+/// Pill buttons
 #{class(pill)} {
     min-width: 5rem;
     padding: 0 $btn-padding-adjust;
@@ -72,7 +100,7 @@ $break-1: xs;
             display: block;
         }
 
-        @include break($break-1) {
+        @include break(xs) {
             width: auto;
             margin: 0.5rem;
         }

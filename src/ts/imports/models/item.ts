@@ -7,10 +7,12 @@ export class mintItem {
      */
     version?: number = 0;
     priority?: number = 0;
+	level?: number = 0;
+	size?: number = 0;
     centered?: boolean = false;
     disabled?: boolean = false;
     private?: boolean = false;
-    
+
     /**
      * Item properties
      */
@@ -33,7 +35,7 @@ export class mintItem {
     href?: string;
     target?: string;
     routerLink?: string[];
-    
+
     /**
      * Item data
      */
