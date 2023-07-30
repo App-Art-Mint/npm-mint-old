@@ -1,6 +1,6 @@
 /// styles.scss - Header styles
 /// @author App/Art Mint
-/// 
+///
 /// @group Main
 @charset 'utf-8';
 
@@ -29,7 +29,7 @@
         align-items: center;
         flex-direction: row;
         height: css-var(header-height);
-        padding: 0 calc(css-var(header-height) / 2);
+        //padding: 0 calc(css-var(header-height) / 2);
 
         #{controls(wrapper)} {
             display: inline-block;
@@ -43,7 +43,7 @@
                 overflow: hidden;
                 transition: height css-var(delay-default), margin css-var(delay-default);
             }
-            
+
             &#{$has-expanded + neg(expanded(true))} {
                 & + ul {
                     margin: 0;
@@ -56,7 +56,7 @@
             top: 0;
             left: 0;
         }
-        
+
         #{id(wrapper)} {
             background: css-var(bg);
             transition-duration: css-var(delay-default);
@@ -109,21 +109,21 @@
         background: css-var(header-bg);
         z-index: -1;
     }
-    
+
     nav {
         & > ul {
             display: flex;
             flex-direction: column;
         }
     }
-    
+
     ul {
         list-style: none;
         margin-top: 0;
         margin-bottom: 1rem;
         padding-left: 0;
     }
-    
+
     a, button {
         display: flex;
         align-items: center;
@@ -133,7 +133,7 @@
         color: css-var(header-fg);
         background: css-var(trans);
     }
-    
+
     h1 {
         display: flex;
         white-space: nowrap;
@@ -142,7 +142,8 @@
 
     #{class(logo)} {
         text-decoration: none;
-        
+		width: auto;
+
         img {
             max-width: css-var(header-height);
         }
@@ -208,7 +209,7 @@
         height: calc(100vh - css-var(header-height));
         transition: none;
         z-index: -2;
-        
+
         &#{class(open)} {
             top: css-var(header-height);
         }
@@ -220,7 +221,7 @@
         right: 0;
         height: css-var(header-height);
     }
-    
+
     #{class(dropdown)} {
         background: css-var(header-bg);
 
