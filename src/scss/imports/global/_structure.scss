@@ -81,6 +81,14 @@ section {
     align-items: center;
     justify-content: center;
     text-align: center;
+
+	&-down {
+		&, & * {
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+		}
+	}
 }
 
 #{class(grid)} {

@@ -37,6 +37,10 @@
     @include states(hover, focus, active) {
         color: css-var($btn-fore-hover);
         background: css-var($btn-border);
+
+		i {
+			color: inherit !important;
+		}
     }
 
     &#{class(alt)} {

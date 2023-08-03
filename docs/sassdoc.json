@@ -2157,7 +2157,7 @@
       "value": "text-decoration: none;\n    text-overflow: ellipsis;\n    white-space: nowrap;\n    overflow: hidden;\n    transition: color css-var(delay-default),\n                background-color css-var(delay-default),\n                border-color css-var(delay-default);",
       "line": {
         "start": 13,
-        "end": 123
+        "end": 127
       }
     },
     "access": "public",
@@ -2178,10 +2178,10 @@
     "context": {
       "type": "css",
       "name": "#{class(btn)},\n#{class(pill)}",
-      "value": "display: inline-block;\n    border-radius: $pill-radius;\n    color: css-var($btn-fore);\n    background: css-var($btn-back);\n    border: $border-width solid css-var($btn-border);\n    text-align: center;\n\n    @include break(xs) {\n        width: auto;\n    }\n\n    @include states(hover, focus, active) {\n        color: css-var($btn-fore-hover);\n        background: css-var($btn-border);\n    }\n\n    &#{class(alt)} {\n        color: css-var($btn-border);\n        background: css-var($btn-back-alt);\n\n        @include states(hover, focus, active) {\n            color: css-var($btn-fore);\n            background: css-var($btn-back-alt-hover);\n            border-color: css-var($btn-back-alt-hover);\n        }\n    }",
+      "value": "display: inline-block;\n    border-radius: $pill-radius;\n    color: css-var($btn-fore);\n    background: css-var($btn-back);\n    border: $border-width solid css-var($btn-border);\n    text-align: center;\n\n    @include break(xs) {\n        width: auto;\n    }\n\n    @include states(hover, focus, active) {\n        color: css-var($btn-fore-hover);\n        background: css-var($btn-border);\n\n\t\ti {\n\t\t\tcolor: inherit !important;\n\t\t}\n    }\n\n    &#{class(alt)} {\n        color: css-var($btn-border);\n        background: css-var($btn-back-alt);\n\n        @include states(hover, focus, active) {\n            color: css-var($btn-fore);\n            background: css-var($btn-back-alt-hover);\n            border-color: css-var($btn-back-alt-hover);\n        }\n    }",
       "line": {
         "start": 25,
-        "end": 123
+        "end": 127
       }
     },
     "access": "public",
@@ -2196,16 +2196,16 @@
   {
     "description": "Default buttons\n",
     "commentRange": {
-      "start": 54,
-      "end": 54
+      "start": 58,
+      "end": 58
     },
     "context": {
       "type": "css",
       "name": "#{class(btn)}",
       "value": "padding: $btn-padding-v $btn-padding-h + $btn-padding-adjust;\n\n\t&-icon {\n\t\tdisplay: block;\n\t\ttext-align: center;\n\n\t\t@include states(hover, focus, active) {\n\t\t\ti {\n\t\t\t\tcolor: css-var($btn-back-alt-hover);\n\t\t\t}\n\t\t}\n\n\t\t@include break(xs) {\n\t\t\tdisplay: inline-block;\n\t\t}\n\n\t\ti {\n\t\t\tmargin: 0 !important;\n\t\t\tcolor: css-var($btn-border);\n\t\t\tfont-size: 4rem;\n\n\t\t\t&::before {\n\t\t\t\ttransition: color css-var(delay-default);\n\t\t\t}\n\t\t}\n\t}",
       "line": {
-        "start": 55,
-        "end": 123
+        "start": 59,
+        "end": 127
       }
     },
     "access": "public",
@@ -2220,16 +2220,16 @@
   {
     "description": "Pill buttons\n",
     "commentRange": {
-      "start": 84,
-      "end": 84
+      "start": 88,
+      "end": 88
     },
     "context": {
       "type": "css",
       "name": "#{class(pill)}",
       "value": "min-width: 5rem;\n    padding: 0 $btn-padding-adjust;\n    line-height: 2;",
       "line": {
-        "start": 85,
-        "end": 123
+        "start": 89,
+        "end": 127
       }
     },
     "access": "public",
@@ -2244,16 +2244,16 @@
   {
     "description": "A list of buttons\n",
     "commentRange": {
-      "start": 91,
-      "end": 91
+      "start": 95,
+      "end": 95
     },
     "context": {
       "type": "css",
       "name": "#{class(buttons)}",
       "value": "@include flex-util();\n\n    & > * {\n        width: 100%;\n        margin: 0.5rem 0;\n\n        #{class(btn)}, #{class(pill)} {\n            display: block;\n        }\n\n        @include break(xs) {\n            width: auto;\n            margin: 0.5rem;\n        }\n    }\n\n    #{class(buttons)} {\n        #{class(pill)} {\n            width: 100%;\n        }\n    }",
       "line": {
-        "start": 92,
-        "end": 123
+        "start": 96,
+        "end": 127
       }
     },
     "access": "public",
@@ -2268,16 +2268,16 @@
   {
     "description": "Buttons within a paragraph\n",
     "commentRange": {
-      "start": 116,
-      "end": 116
+      "start": 120,
+      "end": 120
     },
     "context": {
       "type": "css",
       "name": "p",
       "value": "#{class(pill)} {\n        line-height: 1.5rem;\n        vertical-align: middle;\n    }",
       "line": {
-        "start": 117,
-        "end": 123
+        "start": 121,
+        "end": 127
       }
     },
     "access": "public",
@@ -2493,7 +2493,7 @@
       "value": "@include break-util(padding, 1rem, 0);",
       "line": {
         "start": 5,
-        "end": 122
+        "end": 130
       }
     },
     "access": "public",
