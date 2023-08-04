@@ -25,13 +25,11 @@ export abstract class mintIcon {
         items.forEach((item: HTMLElement) => {
             let iconElement: HTMLElement = document.createElement('i');
             iconElement.classList.add(...icon.split(' '));
-			console.log(iconElement, item);
             if (!item.querySelector('i')) {
                 item.appendChild(iconElement);
             }
 			if (iconElement.classList.contains('fa-up-right-from-square')) {
 				item.setAttribute('target', '_blank');
-				console.log('hi');
 			}
         });
     }

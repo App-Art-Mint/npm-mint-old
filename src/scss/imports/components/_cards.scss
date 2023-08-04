@@ -25,6 +25,14 @@
 		}
 	}
 
+	&#{class(center)} {
+		#{class(content)} {
+			& > * {
+				text-align: center;
+			}
+		}
+	}
+
 	&#{class(stagger)} {
 		position: relative;
 
