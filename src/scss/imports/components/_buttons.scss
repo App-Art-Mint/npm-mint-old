@@ -48,7 +48,7 @@
         background: css-var($btn-back-alt);
 
         @include states(hover, focus, active) {
-            color: css-var($btn-fore);
+            color: css-var($btn-fore-alt-hover);
             background: css-var($btn-back-alt-hover);
             border-color: css-var($btn-back-alt-hover);
         }

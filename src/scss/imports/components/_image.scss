@@ -1,14 +1,16 @@
 /// _image.scss - Image styles
 /// @author App/Art Mint
-/// 
+///
 /// @group Components
 @charset 'utf-8';
 
 /// Imports
 @use '../util' as *;
 
-/// Image styles
+/// A basic image
 #{class(image)} {
+
+	/// A placeholder image warning
     &#{class(error)} {
         &::after {
             content: '❌ Image failed to load. This is a placeholder.';
@@ -26,4 +28,10 @@
     img {
         display: block;
     }
+}
+
+/// Banner images
+#{class(banner)} {
+	position: relative;
+	width: 100%;
 }
