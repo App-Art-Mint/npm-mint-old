@@ -2178,7 +2178,7 @@
     "context": {
       "type": "css",
       "name": "#{class(btn)},\n#{class(pill)}",
-      "value": "display: inline-block;\n    border-radius: $pill-radius;\n    color: css-var($btn-fore);\n    background: css-var($btn-back);\n    border: $border-width solid css-var($btn-border);\n    text-align: center;\n\n    @include break(xs) {\n        width: auto;\n    }\n\n    @include states(hover, focus, active) {\n        color: css-var($btn-fore-hover);\n        background: css-var($btn-border);\n\n\t\ti {\n\t\t\tcolor: inherit !important;\n\t\t}\n    }\n\n    &#{class(alt)} {\n        color: css-var($btn-border);\n        background: css-var($btn-back-alt);\n\n        @include states(hover, focus, active) {\n            color: css-var($btn-fore);\n            background: css-var($btn-back-alt-hover);\n            border-color: css-var($btn-back-alt-hover);\n        }\n    }",
+      "value": "display: inline-block;\n    border-radius: $pill-radius;\n    color: css-var($btn-fore);\n    background: css-var($btn-back);\n    border: $border-width solid css-var($btn-border);\n    text-align: center;\n\n    @include break(xs) {\n        width: auto;\n    }\n\n    @include states(hover, focus, active) {\n        color: css-var($btn-fore-hover);\n        background: css-var($btn-border);\n\n\t\ti {\n\t\t\tcolor: inherit !important;\n\t\t}\n    }\n\n    &#{class(alt)} {\n        color: css-var($btn-border);\n        background: css-var($btn-back-alt);\n\n        @include states(hover, focus, active) {\n            color: css-var($btn-fore-alt-hover);\n            background: css-var($btn-back-alt-hover);\n            border-color: css-var($btn-back-alt-hover);\n        }\n    }",
       "line": {
         "start": 25,
         "end": 127
@@ -2386,7 +2386,7 @@
     }
   },
   {
-    "description": "Image styles\n",
+    "description": "A basic image\n",
     "commentRange": {
       "start": 10,
       "end": 10
@@ -2394,10 +2394,58 @@
     "context": {
       "type": "css",
       "name": "#{class(image)}",
-      "value": "&#{class(error)} {\n        &::after {\n            content: '❌ Image failed to load. This is a placeholder.';\n            position: absolute;\n            bottom: 0;\n            left: 0;\n            width: 100%;\n            padding: 0 $image-shadow-size $image-shadow-size $image-shadow-size;\n            background: css-var($shadow-color);\n            box-shadow: 0 0 $image-shadow-size $image-shadow-size css-var($shadow-color);\n            text-align: center;\n        }\n    }\n\n    img {\n        display: block;\n    }",
+      "value": "/// A placeholder image warning\n    &#{class(error)} {\n        &::after {\n            content: '❌ Image failed to load. This is a placeholder.';\n            position: absolute;\n            bottom: 0;\n            left: 0;\n            width: 100%;\n            padding: 0 $image-shadow-size $image-shadow-size $image-shadow-size;\n            background: css-var($shadow-color);\n            box-shadow: 0 0 $image-shadow-size $image-shadow-size css-var($shadow-color);\n            text-align: center;\n        }\n    }\n\n    img {\n        display: block;\n    }",
       "line": {
         "start": 11,
-        "end": 30
+        "end": 38
+      }
+    },
+    "access": "public",
+    "group": [
+      "undefined"
+    ],
+    "file": {
+      "path": "imports/components/_image.scss",
+      "name": "_image.scss"
+    }
+  },
+  {
+    "description": "A placeholder image warning\n",
+    "commentRange": {
+      "start": 13,
+      "end": 13
+    },
+    "context": {
+      "type": "css",
+      "name": "&#{class(error)}",
+      "value": "&::after {\n            content: '❌ Image failed to load. This is a placeholder.';\n            position: absolute;\n            bottom: 0;\n            left: 0;\n            width: 100%;\n            padding: 0 $image-shadow-size $image-shadow-size $image-shadow-size;\n            background: css-var($shadow-color);\n            box-shadow: 0 0 $image-shadow-size $image-shadow-size css-var($shadow-color);\n            text-align: center;\n        }",
+      "line": {
+        "start": 14,
+        "end": 38
+      }
+    },
+    "access": "public",
+    "group": [
+      "undefined"
+    ],
+    "file": {
+      "path": "imports/components/_image.scss",
+      "name": "_image.scss"
+    }
+  },
+  {
+    "description": "Banner images\n",
+    "commentRange": {
+      "start": 33,
+      "end": 33
+    },
+    "context": {
+      "type": "css",
+      "name": "#{class(banner)}",
+      "value": "position: relative;\n\twidth: 100%;",
+      "line": {
+        "start": 34,
+        "end": 38
       }
     },
     "access": "public",
@@ -2493,7 +2541,7 @@
       "value": "@include break-util(padding, 1rem, 0);",
       "line": {
         "start": 5,
-        "end": 130
+        "end": 134
       }
     },
     "access": "public",
@@ -3037,8 +3085,8 @@
   {
     "description": "Cards\n",
     "commentRange": {
-      "start": 122,
-      "end": 122
+      "start": 124,
+      "end": 124
     },
     "context": {
       "type": "variable",
@@ -3046,8 +3094,8 @@
       "value": "1.5rem",
       "scope": "default",
       "line": {
-        "start": 123,
-        "end": 123
+        "start": 125,
+        "end": 125
       }
     },
     "access": "public",
