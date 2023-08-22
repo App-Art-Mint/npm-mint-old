@@ -106,11 +106,8 @@
 		background: css-var(black-2);
 		width: 100%;
 
-		&> :first-child {
+		&> * {
 			margin-top: 0;
-		}
-
-		&> :last-child {
 			margin-bottom: 0;
 		}
 	}
