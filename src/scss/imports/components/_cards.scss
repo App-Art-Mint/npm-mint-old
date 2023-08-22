@@ -103,7 +103,7 @@
 		display: grid;
 		gap: $grid-gap / 2;
 		padding: $card-padding;
-		background: css-var(black-2);
+		background: css-var($card-bg-color);
 		width: 100%;
 
 		&> * {
