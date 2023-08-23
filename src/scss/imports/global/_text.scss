@@ -1,6 +1,6 @@
 /// text.scss - Text styles
 /// @author App/Art Mint
-/// 
+///
 /// @group Animations
 @charset 'utf-8';
 
@@ -35,4 +35,8 @@ p {
             font-size: map-get($font-size-desktop, $tag);
         }
     }
+}
+
+#{class(upper)} {
+	text-transform: uppercase;
 }

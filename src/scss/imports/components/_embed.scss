@@ -1,0 +1,40 @@
+/// _embed.scss - Embed styles
+/// @author App Art Mint LLC
+///
+/// @group Embed
+@charset 'utf-8';
+
+/// Imports
+@use '../util' as *;
+
+/// Embed Styles
+#{class(embed)} {
+	&-bg {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		min-height: 75vh;
+
+		iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			border: none;
+			pointer-events: none;
+		}
+
+		&#{class(overflow)} {
+			overflow: hidden;
+
+			iframe {
+				top: -10%;
+				left: -10%;
+				width: 120%;
+				height: 120%;
+			}
+		}
+	}
+}

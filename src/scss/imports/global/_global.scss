@@ -24,7 +24,7 @@ main {
     width: 100%;
     min-height: calc(100vh - css-var(header-height));
     z-index: 1000;
-    
+
     & > router-outlet {
         & + * {
             width: 100%;
@@ -79,6 +79,10 @@ a, button {
 
 img {
     width: 100%;
+}
+
+iframe {
+	border: none;
 }
 
 #{class(glow)} {
