@@ -18,6 +18,7 @@
 	@include css-var(twitter, $twitter);
     @include css-var(youtube, $youtube);
     @include css-var(apple, $apple);
+	@include css-var(apple-music, $apple-music);
     @include css-var(spotify, $spotify);
 	@include css-var(soundcloud, $soundcloud);
 	@include css-var(bandcamp, $bandcamp);
@@ -128,7 +129,7 @@ a {
 		}
 
 		.fa-apple {
-			color: css-var(apple);
+			color: css-var(apple-music);
 		}
 
 		.fa-soundcloud {

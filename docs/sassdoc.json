@@ -1567,8 +1567,8 @@
           "name": "light-theme",
           "code": "\n    @include css-var(fore, $fore);\n    @include css-var(back, $back);\n",
           "line": {
-            "start": 54,
-            "end": 57
+            "start": 55,
+            "end": 58
           }
         }
       },
@@ -1579,8 +1579,8 @@
           "name": "light-theme",
           "code": "\n    @include css-var(fore, $fore);\n    @include css-var(back, $back);\n",
           "line": {
-            "start": 54,
-            "end": 57
+            "start": 55,
+            "end": 58
           }
         }
       },
@@ -1591,8 +1591,8 @@
           "name": "dark-theme",
           "code": "\n    @include css-var(fore, $back);\n    @include css-var(back, $fore);\n",
           "line": {
-            "start": 60,
-            "end": 63
+            "start": 61,
+            "end": 64
           }
         }
       },
@@ -1603,8 +1603,8 @@
           "name": "dark-theme",
           "code": "\n    @include css-var(fore, $back);\n    @include css-var(back, $fore);\n",
           "line": {
-            "start": 60,
-            "end": 63
+            "start": 61,
+            "end": 64
           }
         }
       }
@@ -2653,10 +2653,10 @@
     "context": {
       "type": "css",
       "name": ":root",
-      "value": "/// Global Colors\n    /// Brands\n    @include css-var(bitcoin, $bitcoin);\n    @include css-var(ethereum, $ethereum);\n    @include css-var(venmo, $venmo);\n    @include css-var(facebook, $facebook);\n\t@include css-var(twitter, $twitter);\n    @include css-var(youtube, $youtube);\n    @include css-var(apple, $apple);\n    @include css-var(spotify, $spotify);\n\t@include css-var(soundcloud, $soundcloud);\n\t@include css-var(bandcamp, $bandcamp);\n    @include css-var(amazon-0, $amazon-0);\n    @include css-var(amazon-1, $amazon-1);\n    @include css-var(napster-0, $napster-0);\n    @include css-var(napster-1, $napster-1);\n    @include css-var(google-play-0, $google-play-0);\n    @include css-var(google-play-1, $google-play-1);\n    @include css-var(google-play-2, $google-play-2);\n    @include css-var(instagram-0, $instagram-0);\n    @include css-var(instagram-1, $instagram-1);\n    @include css-var(instagram-2, $instagram-2);\n    @include css-var(instagram-3, $instagram-3);\n    @include css-var(instagram-4, $instagram-4);\n    @include css-var(instagram-5, $instagram-5);\n    @include css-var(instagram-6, $instagram-6);\n\n    /// Application Colors\n    @include shades('black', $black, lighten);\n    @include shades('white', $white, darken);\n    @include shades(glow, $trans-light, darken, 7, 10%, true);\n    @include shades(shadow, $trans-dark, darken, 7, 10%, true);\n\n    @include shades(brand, $brand);\n    @include shades(accent, $accent);\n    @include shades(success, $success);\n    @include shades(danger, $danger);\n    @include shades(warning, $warning);\n    @include shades(info, $info);",
+      "value": "/// Global Colors\n    /// Brands\n    @include css-var(bitcoin, $bitcoin);\n    @include css-var(ethereum, $ethereum);\n    @include css-var(venmo, $venmo);\n    @include css-var(facebook, $facebook);\n\t@include css-var(twitter, $twitter);\n    @include css-var(youtube, $youtube);\n    @include css-var(apple, $apple);\n\t@include css-var(apple-music, $apple-music);\n    @include css-var(spotify, $spotify);\n\t@include css-var(soundcloud, $soundcloud);\n\t@include css-var(bandcamp, $bandcamp);\n    @include css-var(amazon-0, $amazon-0);\n    @include css-var(amazon-1, $amazon-1);\n    @include css-var(napster-0, $napster-0);\n    @include css-var(napster-1, $napster-1);\n    @include css-var(google-play-0, $google-play-0);\n    @include css-var(google-play-1, $google-play-1);\n    @include css-var(google-play-2, $google-play-2);\n    @include css-var(instagram-0, $instagram-0);\n    @include css-var(instagram-1, $instagram-1);\n    @include css-var(instagram-2, $instagram-2);\n    @include css-var(instagram-3, $instagram-3);\n    @include css-var(instagram-4, $instagram-4);\n    @include css-var(instagram-5, $instagram-5);\n    @include css-var(instagram-6, $instagram-6);\n\n    /// Application Colors\n    @include shades('black', $black, lighten);\n    @include shades('white', $white, darken);\n    @include shades(glow, $trans-light, darken, 7, 10%, true);\n    @include shades(shadow, $trans-dark, darken, 7, 10%, true);\n\n    @include shades(brand, $brand);\n    @include shades(accent, $accent);\n    @include shades(success, $success);\n    @include shades(danger, $danger);\n    @include shades(warning, $warning);\n    @include shades(info, $info);",
       "line": {
         "start": 11,
-        "end": 159
+        "end": 160
       }
     },
     "access": "public",
@@ -2671,16 +2671,16 @@
   {
     "description": "Light theme\n",
     "commentRange": {
-      "start": 53,
-      "end": 53
+      "start": 54,
+      "end": 54
     },
     "context": {
       "type": "mixin",
       "name": "light-theme",
       "code": "\n    @include css-var(fore, $fore);\n    @include css-var(back, $back);\n",
       "line": {
-        "start": 54,
-        "end": 57
+        "start": 55,
+        "end": 58
       }
     },
     "access": "public",
@@ -2705,16 +2705,16 @@
   {
     "description": "Dark theme\n",
     "commentRange": {
-      "start": 59,
-      "end": 59
+      "start": 60,
+      "end": 60
     },
     "context": {
       "type": "mixin",
       "name": "dark-theme",
       "code": "\n    @include css-var(fore, $back);\n    @include css-var(back, $fore);\n",
       "line": {
-        "start": 60,
-        "end": 63
+        "start": 61,
+        "end": 64
       }
     },
     "access": "public",
@@ -2739,16 +2739,16 @@
   {
     "description": "Apply themes\n",
     "commentRange": {
-      "start": 65,
-      "end": 65
+      "start": 66,
+      "end": 66
     },
     "context": {
       "type": "css",
       "name": ":root",
       "value": "@if ($theme-default == light) {\n        @include light-theme;\n    } @else {\n        @include dark-theme;\n    }",
       "line": {
-        "start": 66,
-        "end": 159
+        "start": 67,
+        "end": 160
       }
     },
     "access": "public",
@@ -2763,16 +2763,16 @@
   {
     "description": "https://codepen.io/thomasrye/pen/VaRoYv\n",
     "commentRange": {
-      "start": 99,
-      "end": 99
+      "start": 100,
+      "end": 100
     },
     "context": {
       "type": "css",
       "name": "background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);\n\t\t\t}\n\t\t}\n\t}\n\n    @include states(hover, focus, active)",
-      "value": "color: css-var(accent-0);\n\n\t\t.fa-facebook, .fa-square-facebook {\n\t\t\tcolor: css-var(facebook);\n\t\t}\n\n        .fa-instagram {\n\t\t\t&::after {\n\t\t\t\topacity: 1;\n\t\t\t}\n\t\t}\n\n\t\t.fa-twitter {\n\t\t\tcolor: css-var(twitter);\n\t\t}\n\n\t\t.fa-youtube {\n            color: css-var(youtube);\n        }\n\n\t\t.fa-spotify {\n\t\t\tcolor: css-var(spotify);\n\t\t}\n\n\t\t.fa-apple {\n\t\t\tcolor: css-var(apple);\n\t\t}\n\n\t\t.fa-soundcloud {\n\t\t\tcolor: css-var(soundcloud);\n\t\t}\n\n\t\t.fa-bandcamp {\n\t\t\tcolor: css-var(bandcamp);\n\t\t}\n\n\t\t.fa-github {\n            color: css-var(white-1);\n        }\n\n        .fa-bitcoin {\n            color: css-var(bitcoin);\n        }\n\n        .fa-ethereum {\n            color: css-var(ethereum);\n        }\n\n        .fa-vimeo {\n            color: css-var(venmo);\n        }",
+      "value": "color: css-var(accent-0);\n\n\t\t.fa-facebook, .fa-square-facebook {\n\t\t\tcolor: css-var(facebook);\n\t\t}\n\n        .fa-instagram {\n\t\t\t&::after {\n\t\t\t\topacity: 1;\n\t\t\t}\n\t\t}\n\n\t\t.fa-twitter {\n\t\t\tcolor: css-var(twitter);\n\t\t}\n\n\t\t.fa-youtube {\n            color: css-var(youtube);\n        }\n\n\t\t.fa-spotify {\n\t\t\tcolor: css-var(spotify);\n\t\t}\n\n\t\t.fa-apple {\n\t\t\tcolor: css-var(apple-music);\n\t\t}\n\n\t\t.fa-soundcloud {\n\t\t\tcolor: css-var(soundcloud);\n\t\t}\n\n\t\t.fa-bandcamp {\n\t\t\tcolor: css-var(bandcamp);\n\t\t}\n\n\t\t.fa-github {\n            color: css-var(white-1);\n        }\n\n        .fa-bitcoin {\n            color: css-var(bitcoin);\n        }\n\n        .fa-ethereum {\n            color: css-var(ethereum);\n        }\n\n        .fa-vimeo {\n            color: css-var(venmo);\n        }",
       "line": {
-        "start": 105,
-        "end": 159
+        "start": 106,
+        "end": 160
       }
     },
     "access": "public",
@@ -2902,8 +2902,8 @@
   {
     "description": "Application Colors\n",
     "commentRange": {
-      "start": 33,
-      "end": 33
+      "start": 34,
+      "end": 34
     },
     "context": {
       "type": "variable",
@@ -2911,8 +2911,8 @@
       "value": "#000",
       "scope": "default",
       "line": {
-        "start": 34,
-        "end": 34
+        "start": 35,
+        "end": 35
       }
     },
     "access": "public",
@@ -2927,8 +2927,8 @@
   {
     "description": "Fonts\n",
     "commentRange": {
-      "start": 53,
-      "end": 53
+      "start": 54,
+      "end": 54
     },
     "context": {
       "type": "variable",
@@ -2936,8 +2936,8 @@
       "value": "sans-serif",
       "scope": "default",
       "line": {
-        "start": 54,
-        "end": 54
+        "start": 55,
+        "end": 55
       }
     },
     "access": "public",
@@ -2952,8 +2952,8 @@
   {
     "description": "Font Sizes\n",
     "commentRange": {
-      "start": 59,
-      "end": 59
+      "start": 60,
+      "end": 60
     },
     "context": {
       "type": "variable",
@@ -2961,8 +2961,8 @@
       "value": "(\n    h1: 2.5rem,\n    h2: 2rem,\n    h3: 1.75rem,\n    h4: 1.5rem,\n    h5: 1.25rem,\n    h6: 1.125rem,\n    p: 1rem,\n)",
       "scope": "default",
       "line": {
-        "start": 60,
-        "end": 68
+        "start": 61,
+        "end": 69
       }
     },
     "access": "public",
@@ -2977,8 +2977,8 @@
   {
     "description": "Structure\n",
     "commentRange": {
-      "start": 79,
-      "end": 79
+      "start": 80,
+      "end": 80
     },
     "context": {
       "type": "variable",
@@ -2986,8 +2986,8 @@
       "value": "2rem",
       "scope": "default",
       "line": {
-        "start": 80,
-        "end": 80
+        "start": 81,
+        "end": 81
       }
     },
     "access": "public",
@@ -3002,8 +3002,8 @@
   {
     "description": "Default theme\n",
     "commentRange": {
-      "start": 82,
-      "end": 82
+      "start": 83,
+      "end": 83
     },
     "context": {
       "type": "variable",
@@ -3011,8 +3011,8 @@
       "value": "light",
       "scope": "default",
       "line": {
-        "start": 83,
-        "end": 83
+        "start": 84,
+        "end": 84
       }
     },
     "access": "public",
@@ -3027,8 +3027,8 @@
   {
     "description": "Outline width\n",
     "commentRange": {
-      "start": 85,
-      "end": 85
+      "start": 86,
+      "end": 86
     },
     "context": {
       "type": "variable",
@@ -3036,8 +3036,8 @@
       "value": "0.125rem",
       "scope": "default",
       "line": {
-        "start": 86,
-        "end": 86
+        "start": 87,
+        "end": 87
       }
     },
     "access": "public",
@@ -3052,8 +3052,8 @@
   {
     "description": "Header\n",
     "commentRange": {
-      "start": 89,
-      "end": 89
+      "start": 90,
+      "end": 90
     },
     "context": {
       "type": "variable",
@@ -3061,8 +3061,8 @@
       "value": "4rem",
       "scope": "default",
       "line": {
-        "start": 90,
-        "end": 90
+        "start": 91,
+        "end": 91
       }
     },
     "access": "public",
@@ -3077,8 +3077,8 @@
   {
     "description": "Default Shadows\n",
     "commentRange": {
-      "start": 92,
-      "end": 92
+      "start": 93,
+      "end": 93
     },
     "context": {
       "type": "variable",
@@ -3086,8 +3086,8 @@
       "value": "glow-2",
       "scope": "default",
       "line": {
-        "start": 93,
-        "end": 93
+        "start": 94,
+        "end": 94
       }
     },
     "access": "public",
@@ -3102,8 +3102,8 @@
   {
     "description": "Images\n",
     "commentRange": {
-      "start": 96,
-      "end": 96
+      "start": 97,
+      "end": 97
     },
     "context": {
       "type": "variable",
@@ -3111,8 +3111,8 @@
       "value": "0.5rem",
       "scope": "default",
       "line": {
-        "start": 97,
-        "end": 97
+        "start": 98,
+        "end": 98
       }
     },
     "access": "public",
@@ -3127,8 +3127,8 @@
   {
     "description": "Buttons\n",
     "commentRange": {
-      "start": 99,
-      "end": 99
+      "start": 100,
+      "end": 100
     },
     "context": {
       "type": "variable",
@@ -3136,8 +3136,8 @@
       "value": "0.4rem",
       "scope": "default",
       "line": {
-        "start": 100,
-        "end": 100
+        "start": 101,
+        "end": 101
       }
     },
     "access": "public",
@@ -3152,8 +3152,8 @@
   {
     "description": "Cards\n",
     "commentRange": {
-      "start": 124,
-      "end": 124
+      "start": 125,
+      "end": 125
     },
     "context": {
       "type": "variable",
@@ -3161,8 +3161,8 @@
       "value": "black-2",
       "scope": "default",
       "line": {
-        "start": 125,
-        "end": 125
+        "start": 126,
+        "end": 126
       }
     },
     "access": "public",
